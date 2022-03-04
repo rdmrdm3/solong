@@ -1,8 +1,8 @@
-NAME			= so_long
+NAME			= test
 
 LIB_DIR			= srcs/
 
-LIB_SRC			= ft_solong.c
+LIB_SRC			= ft_image.c
 
 SRCS			= $(addprefix $(LIB_DIR),$(LIB_SRC))
 
