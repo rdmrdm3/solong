@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 15:04:23 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/04 15:07:00 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/07 14:35:27 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ enum {
 	ON_DESTROY = 17
 };
 
-typedef struct	s_vars {
+typedef struct s_vars {
 	void	*mlx;
 	void	*win;
 }				t_vars;
@@ -41,6 +41,6 @@ int	main(void)
 
 	vars.mlx = mlx_init();
 	vars.win = mlx_new_window(vars.mlx, 192, 108, "Hello world!");
-	mlx_hook(vars.win, 2, 1L<<0, close, &vars);
+	mlx_hook(vars.win, 2, 1L << 0, close, &vars);
 	mlx_loop(vars.mlx);
 }

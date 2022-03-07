@@ -6,14 +6,14 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 15:08:50 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/04 15:11:14 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/07 14:35:56 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <mlx.h>
 #include <stdio.h>
 
-typedef struct	s_vars {
+typedef struct s_vars {
 	void	*mlx;
 	void	*win;
 }				t_vars;
