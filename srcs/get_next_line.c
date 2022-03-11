@@ -6,11 +6,11 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:52:49 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/07 14:33:46 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:54:02 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_ps.h"
+#include "../includes/ft_so_long.h"
 
 // Alloue avec Malloc et retourne une nouvelle chaine composee
 // de s1 et des n premiers caracteres de fridge termine par \0
