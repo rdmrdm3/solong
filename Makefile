@@ -1,14 +1,15 @@
-NAME			= test
+NAME			= so_long
 
-LIB_DIR			= srcs/
+LIB_DIR			= ./srcs/
 
-LIB_SRC			= ft_image.c
+LIB_SRC			= ft_so_long.c ft_exitfail.c ft_parsing.c ft_strlen.c \
+				get_next_line.c
 
 SRCS			= $(addprefix $(LIB_DIR),$(LIB_SRC))
 
 OBJS			= ${SRCS:.c=.o}
 
-INCLUDES_DIR	= includes/
+INCLUDES_DIR	= ./includes/
 
 CC				= gcc
 
