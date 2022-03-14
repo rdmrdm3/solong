@@ -3,7 +3,7 @@
 // 2nd number is number of lines
 // 3rd number is the number of colors
 // 4th number is the number of caractere to define a color
-static char * ghost_xpm[] = {
+static char * ghost_up_xpm[] = {
 "25 25 4 1",
 ". 	c None",
 "b	c #00FF00",
@@ -16,10 +16,10 @@ static char * ghost_xpm[] = {
 "...+++++++++++++++++++...",
 "..+++++++++++++++++++++..",
 "..+++++++++++++++++++++..",
-".++++bbbb+++++++bbbb++++.",
-".+++bbbbbb+++++bbbbbb+++.",
-"++++bb//bb+++++bb//bb++++",
-"++++bb//bb+++++bb//bb++++",
+".++++b//b+++++++b//b++++.",
+".+++bb//bb+++++bb//bb+++.",
+"++++bbbbbb+++++bbbbbb++++",
+"++++bbbbbb+++++bbbbbb++++",
 "++++bbbbbb+++++bbbbbb++++",
 "+++++bbbb+++++++bbbb+++++",
 "+++++++++++++++++++++++++",

@@ -1,0 +1,64 @@
+NAME_PROG		= so_long
+
+NAME_BONUS		= so_long_bonus
+
+SRCS_DIR		= ./srcs/
+
+FILES_COMMON	= ft_exitfail.c ft_parsing.c ft_strlen.c \
+				  get_next_line.c
+
+FILES_PROG		= ft_so_long.c $(FILES_COMMON)
+
+FILES_BONUS		= $(FILES_COMMON)
+
+SRCS			= $(addprefix $(SRCS_DIR),$(FILES_PROG))
+
+SRCS_BONUS		= $(addprefix $(SRCS_DIR),$(FILES_BONUS))
+
+ifdef BONUS_FLAG
+	SRCS_COMP = $(SRCS_BONUS)
+	NAME = $(NAME_BONUS)
+else
+	SRCS_COMP = $(SRCS)
+	NAME = $(NAME_PROG)
+endif
+
+OBJS			= ${SRCS_COMP:.c=.o}
+OBJS_PROG		= ${SRCS:.c=.o}
+OBJS_BONUS		= ${SRCS_BONUS:.c=.o}
+
+INCLUDES_DIR	= ./includes/
+
+CC				= gcc
+
+CMINILIBX		= -lmlx -framework OpenGL -framework AppKit
+
+CFLAGS			= -Wall -Werror -Wextra $(CMINILIBX)
+
+all		: $(NAME)
+
+$(NAME)	: $(OBJS)
+	$(CC) $(OBJS) $(CFLAGS) -o $(NAME) -I $(INCLUDES_DIR)
+
+bonus	: 
+	@make BONUS_FLAG=1 all 
+
+debug	: fclean
+	$(CC) -g $(SRCS) $(CFLAGS) -o $(NAME) -I$(INCLUDES_DIR)
+	lldb $(NAME)
+
+norme	:
+	norminette | grep -v OK
+
+clean	:
+	rm -f $(OBJS_PROG)
+	rm -f $(OBJS_BONUS)
+
+fclean	: clean
+	rm -f $(NAME_PROG)
+	rm -f $(NAME_BONUS)
+
+re		: fclean all
+	clear
+
+.PHONY	: all debug clean fclean re

@@ -2,8 +2,9 @@ NAME			= so_long
 
 LIB_DIR			= ./srcs/
 
-LIB_SRC			= ft_so_long.c ft_exitfail.c ft_parsing.c ft_strlen.c \
-				get_next_line.c
+LIB_SRC			= ft_so_long.c ft_exitfail.c ft_isberfile.c \
+				  ft_ispathofmapvalid.c ft_parsing.c ft_readmap.c ft_strlen.c \
+				  get_next_line.c
 
 SRCS			= $(addprefix $(LIB_DIR),$(LIB_SRC))
 
@@ -15,7 +16,7 @@ CC				= gcc
 
 CFLAGS			= -Wall -Werror -Wextra
 
-CMINILIBX		= -Lmlx -lmlx -framework OpenGL -framework AppKit 
+CMINILIBX		= -lmlx -framework OpenGL -framework AppKit 
 
 all		: $(NAME)
 
@@ -26,7 +27,7 @@ $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) $(CMINILIBX) -o $(NAME) -I $(INCLUDES_DIR)
 
 debug : fclean
-	$(CC) -g $(SRCS) $(CFLAGS) -o $(NAME) -I$(INCLUDES_DIR)
+	$(CC) -g $(SRCS) $(CFLAGS) -o $(NAME) -I $(INCLUDES_DIR)
 	lldb $(NAME)
 
 clean :

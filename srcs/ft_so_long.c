@@ -6,14 +6,20 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:38:30 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/10 21:51:23 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/14 16:01:13 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_so_long.h"
+#include "../includes/ft_so_long.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	if (ft_parsing() == 0)
-		return (ft_exitfail(1, 0));
+	int		parsingresult;
+	t_map	*map;
+
+	map = NULL;
+	parsingresult = ft_parsing(argc, argv, map);
+	if (parsingresult != 1)
+		return (ft_exitfail(1, parsingresult));
+	return (0);
 }

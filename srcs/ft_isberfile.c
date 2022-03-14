@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_isberfile.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 09:56:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/14 16:01:16 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/03/11 14:46:58 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/03/11 15:02:50 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-int	ft_parsing(int argc, char **argv, t_map *map)
+int	ft_isberfile(char *file)
 {
-	if (argc != 2)
-		return (2);
-	if (ft_ispathofmapvalid(argv[1]) != 1)
-		return (3);
-	if (ft_isberfile(argv[1]) != 1)
+	int	file_len;
+
+	file_len = ft_strlen(file);
+	if (file[file_len - 4] != '.')
 		return (4);
-	//  under construction
-	ft_readmap(argv[1], &map);
-printf("out of readmap\n");
-	printf("line 1 =%s\n", map->line);
-	printf("line 2 =%s\n", map->next->line);
-	printf("line 3 =%s\n", map->next->next->line);
-	//
+	if (file[file_len - 3] != 'b')
+		return (4);
+	if (file[file_len - 2] != 'e')
+		return (4);
+	if (file[file_len - 1] != 'r')
+		return (4);
 	return (1);
 }
