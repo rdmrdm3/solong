@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/14 16:01:19 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/14 21:48:04 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_map
 	struct s_map	*next;
 }	t_map;
 
+int		ft_checkmap(t_map *map);
 int		ft_exitfail(int fd, int i);
 int		ft_isberfile(char *file);
 int		ft_ispathofmapvalid(char *arg1);

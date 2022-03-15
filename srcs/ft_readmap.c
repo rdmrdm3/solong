@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/14 16:06:39 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/14 21:06:03 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_readmap(char *arg1, t_map **map)
 
 	fd = open(arg1, O_RDONLY);
 	if (!fd)
-		return (ft_exitfail(1, 5));
+		return (5);
 	line1 = malloc(1 * sizeof(t_map));
 	line1->line = get_next_line(fd);
 	if (line1->line == NULL)

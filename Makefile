@@ -2,7 +2,7 @@ NAME			= so_long
 
 LIB_DIR			= ./srcs/
 
-LIB_SRC			= ft_so_long.c ft_exitfail.c ft_isberfile.c \
+LIB_SRC			= ft_so_long.c ft_checkmap.c ft_exitfail.c ft_isberfile.c \
 				  ft_ispathofmapvalid.c ft_parsing.c ft_readmap.c ft_strlen.c \
 				  get_next_line.c
 
@@ -24,7 +24,7 @@ all		: $(NAME)
 	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) $(CMINILIBX) -o $(NAME) -I $(INCLUDES_DIR)
+	$(CC) $(OBJS) $(CFLAGS) -o $(NAME) -I $(INCLUDES_DIR)
 
 debug : fclean
 	$(CC) -g $(SRCS) $(CFLAGS) -o $(NAME) -I $(INCLUDES_DIR)
