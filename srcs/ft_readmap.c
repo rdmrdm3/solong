@@ -6,36 +6,65 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/14 21:06:03 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/15 17:13:32 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-int	ft_readmap(char *arg1, t_map **map)
+int	ft_inputmap(char *arg1, int nbl, int nbc, char ***map)
 {
+	char	*line;
+	char	**inmap;
+	int		i;
+	int		j;
 	int		fd;
-	t_map	*line1;
-	t_map	*line2;
-	t_map	*line3;
 
 	fd = open(arg1, O_RDONLY);
 	if (!fd)
 		return (5);
-	line1 = malloc(1 * sizeof(t_map));
-	line1->line = get_next_line(fd);
-	if (line1->line == NULL)
-		return (0);
-	line1->next = NULL;
-	line2 = line1;
-	while (line2->line != NULL)
+	inmap = malloc (nbl * sizeof(char *));
+	i = 0;
+	while (i < nbl - 1)
 	{
-		line3 = malloc(1 * sizeof(t_map));
-		line3->line = get_next_line(fd);
-		line3->next = NULL;
-		line2->next = line3;
-		line2 = line3;
+		line = get_next_line(fd);
+		inmap[i] = malloc (nbc * sizeof (char *));
+		j = 0;
+		while (j < nbc - 2)
+		{
+			inmap[i][j] = line[j];
+			j++;
+		}
+		i++;
 	}
-	*map = line1;
+	*map = inmap;
+	close (fd);
+	return (1);
+}
+
+int	ft_readmap(char *arg1, char ***map)
+{
+	int		fd;
+	int		nbline;
+	int		nbcolumn;
+	char	*line;
+
+	fd = open(arg1, O_RDONLY);
+	if (!fd)
+		return (5);
+	nbline = 1;
+	line = get_next_line(fd);
+	nbcolumn = ft_strlen(line);
+	while (nbcolumn == ft_strlen(line))
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		nbline++;
+	}	
+	if (line != NULL)
+		return (6);
+	close (fd);
+	ft_inputmap(arg1, nbline, nbcolumn, map);
 	return (1);
 }
