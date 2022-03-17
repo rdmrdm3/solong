@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_initmap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 22:38:30 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 10:58:18 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/03/16 21:06:29 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/03/17 10:58:12 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-int	main(int argc, char **argv)
+void	ft_initmap(t_map **map)
 {
-	int		parsingresult;
-	t_map	*map;
-
-	map = malloc (1 * sizeof(t_map));
-	parsingresult = ft_parsing(argc, argv, &map);
-	if (parsingresult != 1)
-		return (ft_exitfail(1, parsingresult));
-	return (0);
+	map->wall = 0;
+	map->walkway = 0;
+	map->collectible = 0;
+	map->player = 0;
+	map->exit = 0;
+	map->nbline = 0;
+	map->nbcolumn = 0;
+	map->maze = NULL;
 }

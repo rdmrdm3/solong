@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/15 17:13:32 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/16 21:03:13 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_inputmap(char *arg1, int nbl, int nbc, char ***map)
 	return (1);
 }
 
-int	ft_readmap(char *arg1, char ***map)
+int	ft_readmap(char *arg1, t_map **map)
 {
 	int		fd;
 	int		nbline;

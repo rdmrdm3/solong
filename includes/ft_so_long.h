@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/15 14:32:00 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/16 21:14:38 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,18 @@
 //	char			*line;
 //	struct s_map	*next;
 //}	t_map;
+
+typedef struct s_map
+{
+	int		wall;
+	int		walkway;
+	int		collectible;
+	int		player;
+	int		exit;
+	int		nbline;
+	int		nbcolumn;
+	char	**maze;
+}	t_map;
 
 int		ft_checkmap(char ***map);
 int		ft_exitfail(int fd, int i);
