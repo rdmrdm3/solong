@@ -2,8 +2,10 @@ NAME			= so_long
 
 SRCS_DIR		= ./srcs/
 
-FILES_COMMON	= ft_checkmap.c ft_exitfail.c ft_isberfile.c \
-				  ft_ispathofmapvalid.c ft_parsing.c ft_readmap.c ft_strlen.c \
+FILES_COMMON	= ft_checkmap.c ft_displaymap.c ft_exitfail.c ft_initmap.c \
+				  ft_isberfile.c \
+				  ft_ispathofmapvalid.c ft_parsing.c ft_printmap.c \
+				  ft_readmap.c ft_strlen.c \
 				  get_next_line.c
 
 FILES_PROG		= ft_so_long.c $(FILES_COMMON)

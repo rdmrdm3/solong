@@ -6,58 +6,38 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 09:46:56 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/15 16:23:50 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/17 17:25:00 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-/*
-static int	ft_isinlist(char c, char const *list)
+// check the validity of the map
+int	ft_checkmap(t_map **map)
 {
-	int	i;
+	int i;
 
+	if ((*map)->player != 1)
+		return(7);
+	if ((*map)->collectible < 1)
+		return(8);
+	if ((*map)->exit < 1)
+		return(9);
+	if ((*map)->ghost != 0)
+		return(10);
 	i = 0;
-	while (list[i] != '\0')
+	while (i < (*map)->nbcolumn - 1)
 	{
-		if (list[i] == c)
-			return (1);
+		if ((*map)->maze[0][i] != '1' || (*map)->maze[(*map)->nbline - 1][i] != '1')
+			return (11);
 		i++;
 	}
-	return (0);
-}
-*/
-
-// check the validity of the map
-int	ft_checkmap(char ***map)
-{
-	char	***toto;
-
-	toto = map;
-/*
-	int	nblines;
-	int	nbcolumns;
-	int	i;
-
-	nblines = 0;
-	nbcolumns = ft_strlen(map->line);
-printf("nb columns = %i\n", nbcolumns);
-	if (nbcolumns == 0)
-		return (6);
-	while (map->line != NULL)
+	i = 1;
+	while (i < (*map)->nbline - 1)
 	{
-		i = 0;
-		while (i < nbcolumns)
-		{
-			if (ft_isinlist(map->line[i], "01CEP") == 0)
-				return (7);
-			printf("|%i->%c|", i, map->line[i]);
-			i++;
-		}
-		map = map->next;
-		nblines++;
-printf("\nnb lines =%i\n", nblines);
+		if ((*map)->maze[i][0] != '1' || (*map)->maze[i][(*map)->nbcolumn - 2] != '1')
+			return (11);
+		i++;
 	}
-*/
 	return (1);
 }

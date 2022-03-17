@@ -1,0 +1,38 @@
+/* XPM */
+// 1st number is first line length
+// 2nd number is number of lines
+// 3rd number is the number of colors
+// 4th number is the number of caractere to define a color
+static char * dooropen_xpm[] = {
+"25 25 6 1",
+". 	c None",
+"a	c #D2691E",
+"b	c #800000",
+"c	c #6A5ACD",
+"d	c #87CEEB",
+"e	c #FFD700",
+".........................",
+".aaaaaaaaaaaaaaaaa...bbb.",
+".abbbbbbbbbbbbbbba.bbaab.",
+".ab.............bbbaaaab.",
+".ab.............baaacaab.",
+".ab.............baacdaab.",
+".ab.............baaddaab.",
+".ab.............baaddaab.",
+".ab.............baaddaab.",
+".ab.............baadcaab.",
+".ab.............baacaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaeb.",
+".ab.............baaaaeab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+".ab.............baaaaaab.",
+"........................."};
