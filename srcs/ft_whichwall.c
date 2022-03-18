@@ -6,11 +6,11 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 21:25:02 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/18 09:33:56 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/18 12:11:23 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../includes/ft_so_long.h>
+#include "../includes/ft_so_long.h"
 
 int	ft_iswall(char c)
 {
@@ -19,7 +19,7 @@ int	ft_iswall(char c)
 	return (0);
 }
 
-t_square	ft_getsqure(int i, int j, t_map **map)
+t_square	ft_getsquare(int i, int j, t_map **map)
 {
 	t_square	sq;
 
@@ -39,51 +39,47 @@ char	*ft_frame(int i, int j, t_map **map)
 {
 	if (i == 0 && j == 0)
 		return ("./image/wall04.xpm");
-	if (i == 0 && j == (*map)->nbcolumn - 1)
+	if (i == 0 && j == (*map)->nbcolumn - 2)
 		return ("./image/wall05.xpm");
-	if (i == (*map)->nbline && j == (*map)->nbcolumn -1)
+	if (i == (*map)->nbline - 1 && j == (*map)->nbcolumn -2)
 		return ("./image/wall06.xpm");
-	if (i == (*map)->nbline && j == 0)
+	if (i == (*map)->nbline - 1 && j == 0)
 		return ("./image/wall03.xpm");
 	if (i == 0 && (*map)->maze[1][j] != '1')
 		return ("./image/wall02.xpm");
 	if (i == 0 && (*map)->maze[1][j] == '1')
 		return ("./image/wall08.xpm");
-	if (i == (*map)->nbline && (*map)->maze[(*map)->nbline - 1][j] != '1')
+	if (i == (*map)->nbline - 1 && (*map)->maze[i - 1][j] != '1')
 		return ("./image/wall02.xpm");
-	if (i == (*map)->nbline && (*map)->maze[(*map)->nbline - 1][j] == '1')
+	if (i == (*map)->nbline - 1 && (*map)->maze[i - 1][j] == '1')
 		return ("./image/wall10.xpm");
 	if (j == 0 && (*map)->maze[i][1] != '1')
 		return ("./image/wall01.xpm");
 	if (j == 0 && (*map)->maze[i][1] == '1')
 		return ("./image/wall07.xpm");
-	if (j == (*map)->nbcolumn && (*map)->maze[i][(*map)->nbcolumn - 1] != '1')
+	if (j == (*map)->nbcolumn - 2 && (*map)->maze[i][j - 1] != '1')
 		return ("./image/wall01.xpm");
-	if (j == (*map)->nbcolumn && (*map)->maze[i][(*map)->nbcolumn - 1] == '1')
+	if (j == (*map)->nbcolumn - 2 && (*map)->maze[i][j - 1] == '1')
 		return ("./image/wall09.xpm");
+	return ("./image/wallfail.xpm");
 }
 
 char	*ft_whichwall(int i, int j, t_map **map)
 {
 	t_square	sq;
 
-	if (i == 0 || i == (*map)->nbline || j == 0 || j == (*map)->nbcolumn - 1)
+	if (i == 0 || i == (*map)->nbline - 1 || j == 0 || j == (*map)->nbcolumn - 2)
 		return (ft_frame(i, j, map));
 	sq = ft_getsquare(i, j, map);
+	if (sq.up + sq.le + sq.ri + sq.dw == 0)
+		return ("./image/wall16.xpm");
 	if (sq.up + sq.le + sq.ri + sq.dw == 1)
-		// 1 wall	
+		return (ft_onewall(sq));
 	if (sq.up + sq.le + sq.ri + sq.dw == 2)
-		// 2 walls
+		return (ft_twowall(sq));
 	if (sq.up + sq.le + sq.ri + sq.dw == 3)
-		// 3 walls
+		return (ft_threewall(sq));
 	if (sq.up + sq.le + sq.ri + sq.dw == 4)
-		// 4 walls
-	return ("./image/wall16.xpm");
+		return (ft_fourwall(sq));
+	return ("./image/wallfail.xpm");
 }
-
-
-
-
-
-
-
