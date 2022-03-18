@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 17:59:38 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/18 08:44:00 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,19 @@ typedef struct s_map
 	int		nbcolumn;
 	char	**maze;
 }			t_map;
+
+typedef struct s_square
+{
+	int	ul;
+	int	up;
+	int	ur;
+	int	le;
+	int	ce;
+	int ri;
+	int dl;
+	int	dw;
+	int	dr;
+}	t_square
 
 int		ft_checkmap(t_map **map);
 int		ft_displaymap(t_map **map);

@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 09:46:56 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 17:25:00 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/17 21:27:19 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 // check the validity of the map
 int	ft_checkmap(t_map **map)
 {
-	int i;
+	int	i;
 
 	if ((*map)->player != 1)
-		return(7);
+		return (7);
 	if ((*map)->collectible < 1)
-		return(8);
+		return (8);
 	if ((*map)->exit < 1)
-		return(9);
+		return (9);
 	if ((*map)->ghost != 0)
-		return(10);
+		return (10);
 	i = 0;
 	while (i < (*map)->nbcolumn - 1)
 	{

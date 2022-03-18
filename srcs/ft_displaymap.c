@@ -6,18 +6,21 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 18:05:15 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/17 21:23:25 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-char	*ft_whatimage(char c)
+char	*ft_whatimage(int i, int j, t_map **map)
 {
+	int	c;
+
+	c = (*map)->maze[i][j];
 	if (c == '0')
 		return ("./image/walkway.xpm");
 	else if (c == '1')
-		return ("./image/wall16.xpm");
+		return (ft_whichwall(i, j, map));
 	else if (c == 'C')
 		return ("./image/strawberry.xpm");
 	else if (c == 'E')
@@ -50,12 +53,12 @@ int	ft_displaymap(t_map **map)
 		j = 0;
 		while (j < (*map)->nbcolumn - 1)
 		{
-			img = mlx_xpm_file_to_image(vars.mlx, ft_whatimage((*map)->maze[i][j]), &img_width, &img_height);
+			img = mlx_xpm_file_to_image(vars.mlx, ft_whatimage(i, j, map), &img_width, &img_height);
 			mlx_put_image_to_window(vars.mlx, vars.win, img, j * 25, i * 25);
 			j++;
 		}
 		i++;
 	}
-	mlx_loop(vars.mlx);	
+	mlx_loop(vars.mlx);
 	return (0);
 }
