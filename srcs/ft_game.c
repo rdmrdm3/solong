@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*   ft_game.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 09:56:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/19 21:04:18 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/03/19 21:30:54 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/03/20 22:32:38 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_so_long.h"
+#include "./includes/ft_so_long.h"
 
-int	ft_parsing(int argc, char **argv, t_map **map)
+int	ft_game(t_map **map, t_vars vars)
 {
-	int	i;
-
-	if (argc != 2)
-		return (2);
-	if (ft_ispathofmapvalid(argv[1]) != 1)
-		return (3);
-	if (ft_isberfile(argv[1]) != 1)
-		return (4);
-	ft_initmap(map);
-	if (ft_readmap(argv[1], map) != 1)
-		return (5);
-	printf("out of readmap\n");
-	i = ft_checkmap(map);
-	if (i != 1)
-		return (i);
-//	ft_displaymap(map);
-	return (1);
+	mlx_hook(vars.win, 17, 0L, ft_closegame(&vars), &vars);
+	mlx_hook(vars.win, 2, 1L<<0, presskey(&vars), &vars);
 }

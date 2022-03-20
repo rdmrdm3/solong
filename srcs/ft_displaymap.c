@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 21:23:25 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:30:08 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_whatimage(int i, int j, t_map **map)
 {
-	int	c;
+	int	c
 
 	c = (*map)->maze[i][j];
 	if (c == '0')
@@ -32,7 +32,9 @@ char	*ft_whatimage(int i, int j, t_map **map)
 	return (NULL);
 }
 
-int	ft_displaymap(t_map **map)
+// win_width should be lower than 1920
+// win_heigth should be lower than 1080
+t_vars	ft_displaymap(t_map **map)
 {
 	void	*img;
 	t_vars	vars;
@@ -59,6 +61,5 @@ int	ft_displaymap(t_map **map)
 		}
 		i++;
 	}
-	mlx_loop(vars.mlx);
-	return (0);
+	return (vars);
 }
