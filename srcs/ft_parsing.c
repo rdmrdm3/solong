@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 09:56:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/19 21:04:18 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/21 11:26:08 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_parsing(int argc, char **argv, t_map **map)
 	i = ft_checkmap(map);
 	if (i != 1)
 		return (i);
-//	ft_displaymap(map);
+	printf("no bug\n");
+	ft_displaymap(map);
 	return (1);
 }

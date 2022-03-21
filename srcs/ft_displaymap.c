@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/20 22:30:08 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/21 13:25:21 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_whatimage(int i, int j, t_map **map)
 {
-	int	c
+	int	c;
 
 	c = (*map)->maze[i][j];
 	if (c == '0')
@@ -61,5 +61,6 @@ t_vars	ft_displaymap(t_map **map)
 		}
 		i++;
 	}
+	mlx_loop(vars);
 	return (vars);
 }
