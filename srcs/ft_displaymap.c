@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/21 13:25:21 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/21 14:50:11 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ t_vars	ft_displaymap(t_map **map)
 		}
 		i++;
 	}
-	mlx_loop(vars);
+//	mlx_loop(vars.mlx);
 	return (vars);
 }

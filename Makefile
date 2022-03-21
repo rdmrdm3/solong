@@ -2,11 +2,13 @@ NAME			= so_long
 
 SRCS_DIR		= ./srcs/
 
-FILES_COMMON	= ft_checkmap.c ft_displaymap.c ft_exitfail.c ft_fourwall.c \
-				  ft_initmap.c \
+FILES_COMMON	= ft_checkmap.c ft_closegame.c ft_displaymap.c ft_exitfail.c \
+				  ft_fourwall.c ft_game.c ft_initmap.c \
 				  ft_isberfile.c \
-				  ft_ispathofmapvalid.c ft_onewall.c ft_parsing.c \
-				  ft_printmap.c \
+				  ft_ispathofmapvalid.c ft_onewall.c \
+				  ft_pacup>c \
+				  ft_parsing.c \
+				  ft_presskey.c ft_printmap.c \
 				  ft_readmap.c ft_strlen.c ft_threewall.c ft_twowall.c \
 				  ft_whichwall.c \
 				  get_next_line.c
@@ -54,6 +56,40 @@ debug	: fclean
 
 norme	:
 	norminette -R CheckForbiddenSourceHeader | grep -v OK
+
+test	:
+	@echo "########### test without argument ##################################"
+	@./so_long
+	@echo "########### test with 3 arguments ##################################"
+	@./so_long a d h
+	@echo "########### test with invalid map path #############################"
+	@./so_long maps/nomaphere.ber
+	@echo "########### test with a non .ber file ##############################"
+	@./so_long maps/map.map
+	@echo "########### test 1 with a non rectangular map ######################"
+	@./so_long maps/notrec1.ber
+	@echo "########### test 2 with a non rectangular map ######################"
+	@./so_long maps/notrec2.ber
+	@echo "########### test 3 with a non rectangular map ######################"
+	@./so_long maps/notrec3.ber
+	@echo "########### test with 0 player on the map ##########################"
+	@./so_long maps/map0player.ber
+	@echo "########### test with 2 players on the map #########################"
+	@./so_long maps/map2players.ber
+	@echo "########### test with 0 collectible on the map #####################"
+	@./so_long maps/nocollectible.ber
+	@echo "########### test with 0 exit on the map ############################"
+	@./so_long maps/noexit.ber
+	@echo "########### test with 1 ghost on the map ###########################"
+	@./so_long maps/mapwithghost.ber
+	@echo "########### test 1 with incomplete walls around on the map #########"
+	@./so_long maps/mapcorner1.ber
+	@echo "########### test 2 with incomplete walls around on the map #########"
+	@./so_long maps/mapcorner2.ber
+	@echo "########### test 3 with incomplete walls around on the map #########"
+	@./so_long maps/mapcorner3.ber
+	@echo "########### test 4 with incomplete walls around on the map #########"
+	@./so_long maps/mapcorner4.ber
 
 clean	:
 	rm -f $(OBJS)

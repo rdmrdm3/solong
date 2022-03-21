@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_game.c                                          :+:      :+:    :+:   */
+/*   ft_pacup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 21:30:54 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/21 16:48:56 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/03/21 17:15:00 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/03/21 17:16:30 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-int	ft_game(t_map **map, t_vars *vars)
+int	ft_pacup(t_vars	*vars, t_map **map)
 {
-	printf("mlx = %p, win = %p\n", vars->mlx, vars->win);
-	mlx_hook(vars->win, 17, 0L, ft_closegame, vars);
-	mlx_hook(vars->win, 2, 1L<<0, ft_presskey, vars);
-	map = NULL;
 	return (0);
 }
