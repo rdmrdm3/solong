@@ -3,9 +3,9 @@
 // 2nd number is number of lines
 // 3rd number is the number of colors
 // 4th number is the number of caractere to define a color
-static char * circle_xpm[] = {
+static char * pacmanleft_xpm[] = {
 "25 25 2 1",
-". 	c None",
+". 	c #000000",
 "+	c #FFFF00",
 ".........+++++++.........",
 ".......+++++++++++.......",

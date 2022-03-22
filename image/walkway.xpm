@@ -5,7 +5,7 @@
 // 4th number is the number of caractere to define a color
 static char * walkway_xpm[] = {
 "25 25 2 1",
-". 	c None",
+". 	c #000000",
 "+	c #FFA500",
 ".........................",
 ".........................",

@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/21 23:18:56 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/22 08:29:49 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,8 @@ int	ft_inputmap(char *arg1, t_map **map)
 	return (1);
 }
 
-int	ft_inputspotval(char *arg1, t_map **map)
+int	ft_inputspotval(t_map **map)
 {
-	char	*line;
-	char	**inmaze;
 	int		i;
 	int		j;
 
@@ -79,19 +77,17 @@ int	ft_inputspotval(char *arg1, t_map **map)
 			if ((*map)->maze[i][j] == 'P')
 			{
 				(*map)->spot->pspot[0][0] = i;
-				(*map)->spot->psopt[0][1] = j;
-				(*map)->spot->pspot[0][2] = 0;
+//				(*map)->spot->psopt[0][1] = j;
+//				(*map)->spot->pspot[0][2] = 0;
 			}	
 			j++;
 		}
 		i++;
 	}
-	(*map)->maze = inmaze;
-	close (fd);
 	return (1);
 }
 
-int	ft_inputspot(char *arg1, t_map **map)
+int	ft_inputspot(t_map **map)
 {
 	int	**ps;
 	int	**gs;
@@ -103,7 +99,7 @@ int	ft_inputspot(char *arg1, t_map **map)
 	gs = malloc ((*map)->ghost * sizeof(int *));
 	es = malloc ((*map)->exit * sizeof(int *));
 	cs = malloc ((*map)->collectible * sizeof(int *));
-	ps[0] = malloci (3 * sizeof(int *));
+	ps[0] = malloc (3 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->ghost)
 		gs[i] = malloc (3 * sizeof(int *));

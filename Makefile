@@ -6,7 +6,7 @@ FILES_COMMON	= ft_checkmap.c ft_closegame.c ft_displaymap.c ft_exitfail.c \
 				  ft_fourwall.c ft_game.c ft_initmap.c \
 				  ft_isberfile.c \
 				  ft_ispathofmapvalid.c ft_onewall.c \
-				  ft_pacup>c \
+				  ft_pacup.c ft_pacmove.c \
 				  ft_parsing.c \
 				  ft_presskey.c ft_printmap.c \
 				  ft_readmap.c ft_strlen.c ft_threewall.c ft_twowall.c \
@@ -90,6 +90,10 @@ test	:
 	@./so_long maps/mapcorner3.ber
 	@echo "########### test 4 with incomplete walls around on the map #########"
 	@./so_long maps/mapcorner4.ber
+	@echo "########### test 5 with incomplete walls around on the map #########"
+	@./so_long maps/mapcorner5.ber
+	@echo "########### test 6 with incomplete walls around on the map #########"
+	@./so_long maps/mapcorner6.ber
 
 clean	:
 	rm -f $(OBJS)

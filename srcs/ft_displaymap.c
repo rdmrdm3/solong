@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/21 14:50:11 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/22 16:38:09 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,48 @@ t_vars	ft_displaymap(t_map **map)
 		}
 		i++;
 	}
-//	mlx_loop(vars.mlx);
+
+	ft_pacmove(1, 3, 6, &vars);
+	ft_pacmove(1, 2, 6, &vars);
+	ft_pacmove(2, 2, 7, &vars);
+	ft_pacmove(2, 2, 8, &vars);
+	ft_pacmove(2, 2, 9, &vars);
+	ft_pacmove(2, 2, 10, &vars);
+	ft_pacmove(2, 2, 11, &vars);
+	ft_pacmove(2, 2, 12, &vars);
+	ft_pacmove(3, 3, 12, &vars);
+	ft_pacmove(3, 4, 12, &vars);
+	ft_pacmove(3, 5, 12, &vars);
+	ft_pacmove(3, 6, 12, &vars);
+	ft_pacmove(4, 6, 11, &vars);
+	ft_pacmove(4, 6, 10, &vars);
+	ft_pacmove(4, 6, 9, &vars);
+	ft_pacmove(4, 6, 8, &vars);
+	ft_pacmove(4, 6, 7, &vars);
+	ft_pacmove(4, 6, 6, &vars);
+	ft_pacmove(3, 7, 6, &vars);
+	ft_pacmove(3, 8, 6, &vars);
+	ft_pacmove(3, 9, 6, &vars);
+	ft_pacmove(3, 10, 6, &vars);
+	ft_pacmove(3, 11, 6, &vars);
+	ft_pacmove(3, 12, 6, &vars);
+	ft_pacmove(2, 12, 7, &vars);
+	ft_pacmove(2, 12, 8, &vars);
+	ft_pacmove(3, 13, 8, &vars);
+	ft_pacmove(3, 14, 8, &vars);
+	ft_pacmove(4, 14, 7, &vars);
+	ft_pacmove(4, 14, 6, &vars);
+	ft_pacmove(3, 15, 6, &vars);
+	ft_pacmove(3, 16, 6, &vars);
+	ft_pacmove(3, 17, 6, &vars);
+	ft_pacmove(3, 18, 6, &vars);
+
+
+	ft_pacmove(4, 18, 5, &vars);
+	ft_pacmove(4, 18, 4, &vars);
+	ft_pacmove(1, 17, 4, &vars);
+	ft_pacmove(1, 16, 4, &vars);
+	ft_pacmove(4, 16, 3, &vars);
+	ft_pacmove(4, 16, 2, &vars);
 	return (vars);
 }
