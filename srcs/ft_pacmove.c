@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/22 16:52:58 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/23 15:51:45 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ int	ft_pacmove(int mv, int l, int c, t_vars *vars)
 	void	*img;
 	int		img_width;
 	int		img_height;
-	
+
+printf("in pacmove\n");	
 	ima = malloc(5 * sizeof(char *));
 	ft_whichimage(mv , &ima);
 	i = 1;

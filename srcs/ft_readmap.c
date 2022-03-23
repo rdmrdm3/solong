@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/23 11:52:21 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/23 15:36:55 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,25 +86,25 @@ int	ft_inputspotval(t_map **map)
 			if ((*map)->maze[i][j] == 'P')
 			{
 				(*map)->pspot[0][0] = i;
-				(*map)->psopt[0][1] = j;
+				(*map)->pspot[0][1] = j;
 				(*map)->pspot[0][2] = 0;
 			}
 			if ((*map)->maze[i][j] == 'C')
 			{
 				(*map)->cspot[nc][0] = i;
-				(*map)->csopt[nc][1] = j;
+				(*map)->cspot[nc][1] = j;
 				nc++;
 			}
 			if ((*map)->maze[i][j] == 'E')
 			{
 				(*map)->espot[ne][0] = i;
-				(*map)->esopt[ne][1] = j;
+				(*map)->espot[ne][1] = j;
 				ne++;
 			}
 			if ((*map)->maze[i][j] == 'G')
 			{
 				(*map)->gspot[ng][0] = i;
-				(*map)->gsopt[ng][1] = j;
+				(*map)->gspot[ng][1] = j;
 				(*map)->gspot[ng][2] = 0;
 				ng++;
 			}

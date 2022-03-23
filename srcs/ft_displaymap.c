@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/22 16:38:09 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/23 15:40:43 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_vars	ft_displaymap(t_map **map)
 		}
 		i++;
 	}
-
+/*
 	ft_pacmove(1, 3, 6, &vars);
 	ft_pacmove(1, 2, 6, &vars);
 	ft_pacmove(2, 2, 7, &vars);
@@ -96,13 +96,12 @@ t_vars	ft_displaymap(t_map **map)
 	ft_pacmove(3, 16, 6, &vars);
 	ft_pacmove(3, 17, 6, &vars);
 	ft_pacmove(3, 18, 6, &vars);
-
-
 	ft_pacmove(4, 18, 5, &vars);
 	ft_pacmove(4, 18, 4, &vars);
 	ft_pacmove(1, 17, 4, &vars);
 	ft_pacmove(1, 16, 4, &vars);
 	ft_pacmove(4, 16, 3, &vars);
 	ft_pacmove(4, 16, 2, &vars);
+	*/
 	return (vars);
 }
