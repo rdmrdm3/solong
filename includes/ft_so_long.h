@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/22 14:54:17 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:52:16 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,22 @@ typedef struct s_vars
 	void	*win;
 }			t_vars;
 
-// struct to save the spots where are the player, ghosts, exits and collectibles
-typedef struct s_spot
-{
-	int	**pspot;
-	int	**gspot;
-	int	**espot;
-	int	**cspot;
-}	t_spot;
-
+//struct to save how many exit(exit) and where they are (espot)
 typedef struct s_map
 {
 	int		wall;
 	int		walkway;
 	int		collectible;
+	int		**cspot;
 	int		player;
+	int		**pspot;
 	int		exit;
+	int		**espot;
 	int		ghost;
+	int		**gspot;
 	int		nbline;
 	int		nbcolumn;
 	char	**maze;
-	t_spot	*spot;
 	int		nbmove;
 }			t_map;
 

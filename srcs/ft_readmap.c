@@ -6,12 +6,13 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/22 08:29:49 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:52:21 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
+// count how many of each type are in the map
 int	ft_countwall(char c, t_map **map)
 {
 	if (c == '0')
@@ -31,6 +32,7 @@ int	ft_countwall(char c, t_map **map)
 	return (1);
 }
 
+// create the map in the char **
 int	ft_inputmap(char *arg1, t_map **map)
 {
 	char	*line;
@@ -63,11 +65,18 @@ int	ft_inputmap(char *arg1, t_map **map)
 	return (1);
 }
 
+// 
 int	ft_inputspotval(t_map **map)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
+	int	ne;
+	int	nc;
+	int	ng;
 
+	ne = 0;
+	nc = 0;
+	ng = 0;
 	i = 0;
 	while (i < (*map)->nbline)
 	{
@@ -76,10 +85,29 @@ int	ft_inputspotval(t_map **map)
 		{
 			if ((*map)->maze[i][j] == 'P')
 			{
-				(*map)->spot->pspot[0][0] = i;
-//				(*map)->spot->psopt[0][1] = j;
-//				(*map)->spot->pspot[0][2] = 0;
-			}	
+				(*map)->pspot[0][0] = i;
+				(*map)->psopt[0][1] = j;
+				(*map)->pspot[0][2] = 0;
+			}
+			if ((*map)->maze[i][j] == 'C')
+			{
+				(*map)->cspot[nc][0] = i;
+				(*map)->csopt[nc][1] = j;
+				nc++;
+			}
+			if ((*map)->maze[i][j] == 'E')
+			{
+				(*map)->espot[ne][0] = i;
+				(*map)->esopt[ne][1] = j;
+				ne++;
+			}
+			if ((*map)->maze[i][j] == 'G')
+			{
+				(*map)->gspot[ng][0] = i;
+				(*map)->gsopt[ng][1] = j;
+				(*map)->gspot[ng][2] = 0;
+				ng++;
+			}
 			j++;
 		}
 		i++;
@@ -87,28 +115,26 @@ int	ft_inputspotval(t_map **map)
 	return (1);
 }
 
+// create the structure that contains the coordinates of the player, exit ...
 int	ft_inputspot(t_map **map)
 {
-	int	**ps;
-	int	**gs;
-	int	**es;
-	int	**cs;
 	int	i;
 
-	ps = malloc (1 * sizeof(int *));
-	gs = malloc ((*map)->ghost * sizeof(int *));
-	es = malloc ((*map)->exit * sizeof(int *));
-	cs = malloc ((*map)->collectible * sizeof(int *));
-	ps[0] = malloc (3 * sizeof(int *));
+	(*map)->gspot = malloc ((*map)->ghost * sizeof(int *));
+	(*map)->espot = malloc ((*map)->exit * sizeof(int *));
+	(*map)->cspot = malloc ((*map)->collectible * sizeof(int *));
+	(*map)->pspot = malloc (1 * sizeof(int *));
+	(*map)->pspot[0] = malloc (3 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->ghost)
-		gs[i] = malloc (3 * sizeof(int *));
+		(*map)->gspot[i] = malloc (3 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->exit)
-		es[i] = malloc (3 * sizeof(int *));
+		(*map)->espot[i] = malloc (2 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->collectible)
-		cs[i] = malloc (3 * sizeof(int *));
+		(*map)->cspot[i] = malloc (2 * sizeof(int *));
+	ft_inputspotval(map);
 	return (0);
 }
 
