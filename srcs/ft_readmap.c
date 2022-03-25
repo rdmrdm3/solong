@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/23 15:36:55 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/25 10:08:47 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,24 +85,28 @@ int	ft_inputspotval(t_map **map)
 		{
 			if ((*map)->maze[i][j] == 'P')
 			{
+				printf("one player has been found\n");
 				(*map)->pspot[0][0] = i;
 				(*map)->pspot[0][1] = j;
 				(*map)->pspot[0][2] = 0;
 			}
 			if ((*map)->maze[i][j] == 'C')
 			{
+				printf("collectible number %i has been found\n", nc + 1);
 				(*map)->cspot[nc][0] = i;
 				(*map)->cspot[nc][1] = j;
 				nc++;
 			}
 			if ((*map)->maze[i][j] == 'E')
 			{
+				printf("exit number %i has been found\n", ne + 1);
 				(*map)->espot[ne][0] = i;
 				(*map)->espot[ne][1] = j;
 				ne++;
 			}
 			if ((*map)->maze[i][j] == 'G')
 			{
+				printf("ghost number %i has been found\n", ng + 1);
 				(*map)->gspot[ng][0] = i;
 				(*map)->gspot[ng][1] = j;
 				(*map)->gspot[ng][2] = 0;
@@ -120,6 +124,7 @@ int	ft_inputspot(t_map **map)
 {
 	int	i;
 
+printf ("inside inputspot\n");
 	(*map)->gspot = malloc ((*map)->ghost * sizeof(int *));
 	(*map)->espot = malloc ((*map)->exit * sizeof(int *));
 	(*map)->cspot = malloc ((*map)->collectible * sizeof(int *));
@@ -127,13 +132,13 @@ int	ft_inputspot(t_map **map)
 	(*map)->pspot[0] = malloc (3 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->ghost)
-		(*map)->gspot[i] = malloc (3 * sizeof(int *));
+		(*map)->gspot[i++] = malloc (3 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->exit)
-		(*map)->espot[i] = malloc (2 * sizeof(int *));
+		(*map)->espot[i++] = malloc (2 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->collectible)
-		(*map)->cspot[i] = malloc (2 * sizeof(int *));
+		(*map)->cspot[i++] = malloc (2 * sizeof(int *));
 	ft_inputspotval(map);
 	return (0);
 }
@@ -165,5 +170,6 @@ int	ft_readmap(char *arg1, t_map **map)
 	free(line);
 	close (fd);
 	ft_inputmap(arg1, map);
+	ft_inputspot(map);
 	return (1);
 }
