@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 08:34:28 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:25:19 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_presskey(int keycode, t_map **map)
 	int y = (*map)->pspot[0][0];
    	int x = (*map)->pspot[0][1];
 
+	printf("press increm=%i\n", (*map)->increm);
+	(*map)->key = keycode;
 	printf("y=%d	x=%d\n", y, x);
 	printf("(y, x+1)=>%c\n", (*map)->maze[y][x + 1]);	
 	printf("(y, x-1)=>%c\n", (*map)->maze[y][x - 1]);	

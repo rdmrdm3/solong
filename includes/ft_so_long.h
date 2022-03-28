@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/25 09:35:03 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:18:26 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <mlx.h>
+# include "../mlx/mlx.h"
 
 // to remove
 # include <stdio.h>
@@ -50,6 +50,8 @@ typedef struct s_map
 	int		nbmove;
 	void	*mlx;
 	void	*win;
+	int		key;
+	int		increm;
 }			t_map;
 
 typedef struct s_square

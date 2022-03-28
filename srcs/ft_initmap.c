@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:06:29 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/23 15:33:48 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:16:19 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	ft_initmap(t_map **map)
 	(*map)->nbcolumn = 0;
 	(*map)->maze = NULL;
 	(*map)->nbmove = 0;
+	(*map)->key = -1;
+	(*map)->increm = 0;
 }
