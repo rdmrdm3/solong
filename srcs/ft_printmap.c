@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:32:44 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 16:18:09 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:57:59 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_printmap(t_map **map)
 	printf("nb walkway =%i\n", (*map)->walkway);
 	printf("nb collectible =%i\n", (*map)->collectible);
 	printf("nb player =%i\n", (*map)->player);
-	printf("nb exit =%i\n", (*map)->exit);
+	printf("nb exit =%i\n", (*map)->exitout);
 	printf("nb ghost =%i\n", (*map)->ghost);
 	printf("nb line =%i\n", (*map)->nbline);
 	printf("nb column =%i\n", (*map)->nbcolumn);

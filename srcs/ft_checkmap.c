@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 09:46:56 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 21:27:19 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:55:07 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_checkmap(t_map **map)
 		return (7);
 	if ((*map)->collectible < 1)
 		return (8);
-	if ((*map)->exit < 1)
+	if ((*map)->exitout < 1)
 		return (9);
 	if ((*map)->ghost != 0)
 		return (10);

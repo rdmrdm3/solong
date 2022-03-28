@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:06:29 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 16:57:22 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:35:56 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_initmap(t_map **map)
 	(*map)->cspot = NULL;
 	(*map)->player = 0;
 	(*map)->pspot = NULL;
-	(*map)->exit = 0;
+	(*map)->exitout = 0;
 	(*map)->espot = NULL;
 	(*map)->ghost = 0;
 	(*map)->gspot = NULL;

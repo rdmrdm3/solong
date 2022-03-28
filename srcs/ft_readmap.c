@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:02:15 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/25 10:08:47 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:58:43 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_countwall(char c, t_map **map)
 	else if (c == 'C')
 		(*map)->collectible++;
 	else if (c == 'E')
-		(*map)->exit++;
+		(*map)->exitout++;
 	else if (c == 'P')
 		(*map)->player++;
 	else if (c == 'G')
@@ -126,7 +126,7 @@ int	ft_inputspot(t_map **map)
 
 printf ("inside inputspot\n");
 	(*map)->gspot = malloc ((*map)->ghost * sizeof(int *));
-	(*map)->espot = malloc ((*map)->exit * sizeof(int *));
+	(*map)->espot = malloc ((*map)->exitout * sizeof(int *));
 	(*map)->cspot = malloc ((*map)->collectible * sizeof(int *));
 	(*map)->pspot = malloc (1 * sizeof(int *));
 	(*map)->pspot[0] = malloc (3 * sizeof(int *));
@@ -134,7 +134,7 @@ printf ("inside inputspot\n");
 	while (i < (*map)->ghost)
 		(*map)->gspot[i++] = malloc (3 * sizeof(int *));
 	i = 0;
-	while (i < (*map)->exit)
+	while (i < (*map)->exitout)
 		(*map)->espot[i++] = malloc (2 * sizeof(int *));
 	i = 0;
 	while (i < (*map)->collectible)
