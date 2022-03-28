@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pacmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: acolin <acolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/25 16:03:51 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:25:28 by acolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	ft_l(int mv, int l)
 
 int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 {		
+	printf("%d\n", j);
 	int			w;
 	int			h;
 	void		*img;
@@ -71,22 +72,18 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 int	ft_pacmove(int mv, int l, int c, t_map **map)
 {
 	int				i;
-	static int		j = 0;
 	char			**ima;
 
-	j = 0;
 	i = 0;
 	printf("in pacmove\n");
 	ima = malloc(5 * sizeof(char *));
 	ft_whichimage(mv, &ima);
-	while (i <= 25)
-	{	
-		ft_onemove(mv, l, c, i, j, map, ima);
-		j += 1 - 5 * (j == 4);
-		i++;
-	}
-	(*map)->pspot[0][1] += (mv == 2) - (mv == 4);
-	(*map)->pspot[0][0] += (mv == 3) - (mv == 1);
+	ft_onemove(mv, l, c, (*map)->increm, (*map)->frame, map, ima);
+	if ((*map)->increm % 5)
+		(*map)->frame++;
+	if ((*map)->frame == 5)
+		(*map)->frame = 0;
+	//j += 1 - 5 * (j == 4);
 	return (0);
 }
 

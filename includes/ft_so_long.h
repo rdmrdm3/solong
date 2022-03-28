@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_so_long.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: acolin <acolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:18:26 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:25:04 by acolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ typedef struct s_map
 	void	*win;
 	int		key;
 	int		increm;
+	int		anim;
+	int		mv;
+	int		frame;
 }			t_map;
 
 typedef struct s_square
@@ -72,7 +75,7 @@ int		ft_closegame(t_map **map);
 void	ft_displaymap(t_map **map);
 int		ft_exitfail(int fd, int i);
 char	*ft_fourwall(t_square sq);
-int		ft_game(t_map **map);
+int		ft_game(t_map *map);
 void	ft_initmap(t_map **map);
 int		ft_isberfile(char *file);
 int		ft_ispathofmapvalid(char *arg1);
@@ -81,7 +84,7 @@ int		ft_pacup(t_map **map);
 int		ft_pacmove(int mv, int l, int c, t_map **map);
 int		ft_parsing(int argc, char **argv, t_map **map);
 void	ft_printmap(t_map **map);
-int		ft_presskey(int keycode, t_map **map);
+int		ft_presskey(int keycode, void *map);
 int		ft_readmap(char *arg1, t_map **map);
 int		ft_strlen(const char *s);
 char	*ft_threewall(t_square sq);
