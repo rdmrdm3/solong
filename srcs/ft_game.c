@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:30:54 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:59:54 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 16:35:21 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,19 @@
 int	ft_game(t_map **map)
 {
 	printf("mlx = %p, win = %p\n", (*map)->mlx, (*map)->win);
-//	mlx_hook((*map)->win, 17, 0L, ft_closegame, map);
 	printf("game increm=%i\n", (*map)->increm);
-	if ((*map)->increm == 0)
+	
+	if ((*map)->anim == 1)
 	{
-//		mlx_hook((*map)->win, 2, 1L<<0, ft_presskey, map);
-//		mlx_key_hook((*map)->win, ft_presskey, map);
 		(*map)->increm++;
-	}
-	else
-	{
-		ft_presskey((*map)->key, map);
-		(*map)->increm++;
-		if ((*map)->increm == 24)
+		if ((*map)->increm > 25)
 		{
 			(*map)->increm = 0;
-			(*map)->key = -1;
+			(*map)->anim = 0;
+			(*map)->pspot[0][0] += ((*map)->mv == 3) - ((*map)->mv == 1);
+			(*map)->pspot[0][1] += ((*map)->mv == 2) - ((*map)->mv == 4);
 		}
+		ft_pacmove((*map)->mv, (*map)->pspot[0][0], (*map)->pspot[0][1], map);
 	}
-//	map = NULL;
 	return (0);
 }

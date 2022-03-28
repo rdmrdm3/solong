@@ -57,6 +57,10 @@ debug	: fclean
 norme	:
 	norminette -R CheckForbiddenSourceHeader | grep -v OK
 
+run		: fclean
+	@make all
+	@./so_long maps/map01.ber
+
 test	:
 	@echo "########### test without argument ##################################"
 	@./so_long

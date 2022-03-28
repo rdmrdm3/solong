@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 14:02:26 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 16:57:05 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ typedef struct s_map
 	int		nbmove;
 	void	*mlx;
 	void	*win;
-	int		key;
+	int		mv;
 	int		increm;
-	int		anim;	
+	int		anim;
+	int		pacmouth;	
 }			t_map;
 
 typedef struct s_square
@@ -82,7 +83,7 @@ int		ft_pacup(t_map **map);
 int		ft_pacmove(int mv, int l, int c, t_map **map);
 int		ft_parsing(int argc, char **argv, t_map **map);
 void	ft_printmap(t_map **map);
-int		ft_presskey(int keycode, t_map **map);
+int		ft_presskey(int keycode, void **map);
 int		ft_readmap(char *arg1, t_map **map);
 int		ft_strlen(const char *s);
 char	*ft_threewall(t_square sq);

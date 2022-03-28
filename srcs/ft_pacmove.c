@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:59:48 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 16:25:50 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,22 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 }
 
 int	ft_pacmove(int mv, int l, int c, t_map **map)
+{
+	char			**ima;
+
+	printf("in pacmove\n");
+	ima = malloc(5 * sizeof(char *));
+	ft_whichimage(mv, &ima);
+	ft_onemove(mv, l, c, (*map)->increm, (*map)->pacmouth, map, ima);
+	if (((*map)->increm / 5) % 5)
+		(*map)->pacmouth++;
+	if ((*map)->pacmouth == 5)
+		(*map)->pacmouth = 0;
+//	j += 1 - 5 * (j == 4);
+	return (0);
+}
+
+int	ft_pacmoveold(int mv, int l, int c, t_map **map)
 {
 	int				i;
 	static int		j = 0;
