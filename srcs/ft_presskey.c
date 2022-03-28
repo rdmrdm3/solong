@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 17:57:27 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 23:06:40 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_presskey(int keycode, t_map **map)
 //	printf("(y, x-1)=>%c\n", (*map)->maze[y][x - 1]);	
 //	printf("(y+1, x)=>%c\n", (*map)->maze[y + 1][x]);	
 //	printf("(y-1, x+1)=>%c\n", (*map)->maze[y - 1][x]);	
+	printf("anim =%i\n", (*map)->anim);
 	if ((*map)->anim == 0)
 	{
 		if (keycode == 53)
