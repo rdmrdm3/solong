@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/25 16:03:51 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:59:48 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,59 +87,5 @@ int	ft_pacmove(int mv, int l, int c, t_map **map)
 	}
 	(*map)->pspot[0][1] += (mv == 2) - (mv == 4);
 	(*map)->pspot[0][0] += (mv == 3) - (mv == 1);
-	return (0);
-}
-
-int	ft_pacmoveold(int mv, int l, int c, t_map **map)
-{
-	int				i;
-	static int		j = 0;
-	char			**ima;
-	void			*img;
-	int				img_width;
-	int				img_height;
-
-	if (j == 4)
-		j = 0;
-	printf("in pacmove\n");
-	ima = malloc(5 * sizeof(char *));
-	ft_whichimage(mv, &ima);
-	i = 1;
-	while (i < 9)
-	{
-		img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkway.xpm", &img_width, &img_height);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, ft_c(mv, c), ft_l(mv, l));
-//printf("c*25=%i, l*25=%i, ftc=%i, ftl=%i, mv=%i\n", c*25, l*25, ft_c(mv, c), ft_l(mv, l), mv);
-		img = mlx_xpm_file_to_image((*map)->mlx, ima[1], &img_width, &img_height);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * (mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
-		mlx_destroy_image((*map)->mlx, img);
-		i++;
-	}
-	i = 8;
-	while (i < 17)
-	{
-		img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkway.xpm", &img_width, &img_height);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, ft_c(mv, c), ft_l(mv, l));
-		img = mlx_xpm_file_to_image((*map)->mlx, ima[2], &img_width, &img_height);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * (mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
-		i++;
-	}
-	i = 17;
-	while (i < 25)
-	{
-		img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkway.xpm", &img_width, &img_height);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, ft_c(mv, c), ft_l(mv, l));
-		img = mlx_xpm_file_to_image((*map)->mlx, ima[3], &img_width, &img_height);
-		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * (mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
-		i++;
-	}
-	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkway.xpm", &img_width, &img_height);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, ft_c(mv, c), ft_l(mv, l));
-	img = mlx_xpm_file_to_image((*map)->mlx, "./image/pacman.xpm", &img_width, &img_height);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * (mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
 	return (0);
 }

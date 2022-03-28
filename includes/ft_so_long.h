@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:18:26 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:02:26 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct s_map
 	void	*win;
 	int		key;
 	int		increm;
+	int		anim;	
 }			t_map;
 
 typedef struct s_square
