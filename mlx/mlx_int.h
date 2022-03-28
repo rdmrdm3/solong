@@ -14,6 +14,7 @@
 #define FONT_WIDTH	10
 #define	FONT_HEIGHT	20
 
+# define GL_SILENCE_DEPRECATION 1
 
 typedef int (*func_t)();
 

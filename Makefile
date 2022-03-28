@@ -35,7 +35,7 @@ INCLUDES_DIR	= ./includes/
 
 CC				= gcc
 
-CMINILIBX		= -lmlx -framework OpenGL -framework AppKit 
+CMINILIBX		= -L./mlx -lmlx -framework OpenGL -framework AppKit 
 
 CFLAGS			= -Wall -Werror -Wextra
 
