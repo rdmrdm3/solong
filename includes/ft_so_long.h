@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 16:57:05 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:11:16 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include "../mlx/mlx.h"
+# include <mlx.h>
+//# include "../mlx/mlx.h"
 
 // to remove
 # include <stdio.h>

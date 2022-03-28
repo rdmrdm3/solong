@@ -51,14 +51,13 @@ bonus	:
 	@make BONUS_FLAG=1 all
 
 debug	: fclean
-	$(CC) -g $(SRCS) $(CFLAGS) $(MINILIBX) -o $(NAME) -I $(INCLUDES_DIR)
-	lldb $(NAME)
+	$(CC) -g $(SRCS) $(CFLAGS) $(CMINILIBX) -o $(NAME)_debug -I $(INCLUDES_DIR)
+	lldb $(NAME)_debug
 
 norme	:
 	norminette -R CheckForbiddenSourceHeader | grep -v OK
 
-run		: fclean
-	@make all
+run		: fclean all
 	@./so_long maps/map01.ber
 
 test	:
@@ -104,6 +103,8 @@ clean	:
 
 fclean	: clean
 	rm -f $(NAME)
+	rm -f $(NAME)_debug
+	rm -rf $(NAME)_debug.dSYM
 
 re		: fclean all
 	clear
