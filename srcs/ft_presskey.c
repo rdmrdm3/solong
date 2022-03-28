@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/25 15:52:26 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/28 08:34:28 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ int	ft_presskey(int keycode, t_map **map)
 			printf("mur\n");
 	}
 	//printf("you just pressed key number =>%i\n", keycode);
-	return (0);
+	return (keycode);
 }
