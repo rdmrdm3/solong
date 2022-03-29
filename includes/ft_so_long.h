@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/29 15:02:10 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/29 15:30:33 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		ft_closegame(t_map **map);
 void	ft_displaymap(t_map **map);
 int		ft_exitfail(int fd, int i);
 char	*ft_fourwall(t_square sq);
-int		ft_game(t_map **map);
+int		ft_game(t_map *map);
 void	ft_initmap(t_map **map);
 int		ft_isberfile(char *file);
 int		ft_ispathofmapvalid(char *arg1);
