@@ -9,6 +9,7 @@ FILES_COMMON	= ft_checkmap.c ft_closegame.c ft_displaymap.c ft_exitfail.c \
 				  ft_pacup.c ft_pacmove.c \
 				  ft_parsing.c \
 				  ft_presskey.c ft_printmap.c \
+				  ft_printmaze.c \
 				  ft_readmap.c ft_strlen.c ft_threewall.c ft_twowall.c \
 				  ft_whichwall.c \
 				  get_next_line.c

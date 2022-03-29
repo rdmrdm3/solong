@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/29 15:30:33 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:00:14 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,8 @@ char	*ft_threewall(t_square sq);
 char	*ft_twowall(t_square sq);
 char	*ft_whichwall(int i, int j, t_map **map);
 char	*get_next_line(int fd);
+
+// to be removed
+int	ft_printmaze(t_map **map);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/29 15:51:16 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:51:06 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int	ft_whichimage(int mv, char ***ima)
 
 int	ft_c(int mv, int c)
 {
-	return (c * 25 - 25 * (mv == 2) + 25 * (mv == 4));
+	return (c * 25 + 25 * (mv == 2) - 25 * (mv == 4));
 }
 
 int	ft_l(int mv, int l)
 {
-	return (l * 25 - 25 * (mv == 3) + 25 * (mv == 1));
+	return (l * 25 + 25 * (mv == 3) - 25 * (mv == 1));
 }
 
 int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
@@ -56,11 +56,17 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 	int			h;
 	void		*img;
 
-	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkway.xpm", &w, &h);
+	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwayblack.xpm", &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, ft_c(mv, c), 
-			ft_l(mv, l));	
 	mlx_destroy_image((*map)->mlx, img);
+//	if ((*map)->increm != 0)
+//	{
+//		img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwaytest2.xpm", &w, &h);
+//		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, ft_c(mv, c), 
+//			ft_l(mv, l));
+//		printf("increm=%i\n", (*map)->increm);
+//		mlx_destroy_image((*map)->mlx, img);
+//	}
 	img = mlx_xpm_file_to_image((*map)->mlx, ima[j], &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * 
 			(mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
@@ -72,7 +78,7 @@ int	ft_pacmove(int mv, int l, int c, t_map **map)
 {
 	char			**ima;
 
-	printf("in pacmove\n");
+//	printf("in pacmove\n");
 	ima = malloc(5 * sizeof(char *));
 	ft_whichimage(mv, &ima);
 	ft_onemove(mv, l, c, (*map)->increm, (*map)->pacmouth, map, ima);

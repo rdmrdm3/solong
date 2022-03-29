@@ -28,8 +28,8 @@ static char * pacman_down1_xpm[] = {
 ".+++++++++ooooo+++++++++.",
 "..+++++++ooooooo+++++++..",
 "..+++++++ooooooo+++++++..",
-"...+++++.ooooooo.+++++...",
-"....++++.ooooooo.++++....",
-".....++..ooooooo..++.....",
-".........ooooooo.........",
-".........ooooooo........."};
+"...+++++ooooooooo+++++...",
+"....++++ooooooooo++++....",
+".....++ooooooooooo++.....",
+"ooooooooooooooooooooooooo",
+"ooooooooooooooooooooooooo"};

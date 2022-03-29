@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:30:54 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/29 15:31:00 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/29 20:38:39 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_game(t_map *map)
 {
-	printf("mlx = %p, win = %p\n", map->mlx, map->win);
-	printf("game increm=%i\n", map->increm);
+//	printf("mlx = %p, win = %p\n", map->mlx, map->win);
+//	printf("game increm=%i\n", map->increm);
 	
 	if (map->anim == 1)
 	{
