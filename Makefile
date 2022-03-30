@@ -57,6 +57,7 @@ debug	: fclean
 	lldb $(NAME)_debug
 
 norme	:
+	cd srcs/
 	norminette -R CheckForbiddenSourceHeader | grep -v OK
 
 run		: fclean all

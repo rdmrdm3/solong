@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/30 09:15:59 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:43:58 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,8 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwayblack.xpm", &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
 	mlx_destroy_image((*map)->mlx, img);
-//	if ((*map)->increm != 0)
-//	{
-//		img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwaytest2.xpm", &w, &h);
-//		mlx_put_image_to_window((*map)->mlx, (*map)->win, img, ft_c(mv, c), 
-//			ft_l(mv, l));
-//		printf("increm=%i\n", (*map)->increm);
-//		mlx_destroy_image((*map)->mlx, img);
-//	}
 	img = mlx_xpm_file_to_image((*map)->mlx, ima[j], &w, &h);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * 
-			(mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
+	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * (mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
 	mlx_destroy_image((*map)->mlx, img);
 	return (0);
 }
@@ -78,7 +69,6 @@ int	ft_pacmove(int mv, int l, int c, t_map **map)
 {
 	char			**ima;
 
-//	printf("in pacmove\n");
 	ima = malloc(5 * sizeof(char *));
 	ft_whichimage(mv, &ima);
 	ft_onemove(mv, l, c, (*map)->increm, (*map)->pacmouth, map, ima);
@@ -94,7 +84,7 @@ int	ft_pacmove(int mv, int l, int c, t_map **map)
 int	ft_pacmoveold(int mv, int l, int c, t_map **map)
 {
 	int				i;
-	static int		j = 0;
+	static int		j;
 	char			**ima;
 
 	j = 0;
