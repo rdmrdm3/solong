@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/30 15:43:58 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/30 22:14:56 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
 	mlx_destroy_image((*map)->mlx, img);
 	img = mlx_xpm_file_to_image((*map)->mlx, ima[j], &w, &h);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25 + i * (mv == 2) - i * (mv == 4), l * 25 - i * (mv == 1) + i * (mv == 3));
+	mlx_put_image_to_window((*map)->mlx, (*map)->win,
+		img, c * 25 + i * (mv == 2) - i * (mv == 4),
+		l * 25 - i * (mv == 1) + i * (mv == 3));
 	mlx_destroy_image((*map)->mlx, img);
 	return (0);
 }
@@ -72,9 +74,10 @@ int	ft_pacmove(int mv, int l, int c, t_map **map)
 	ima = malloc(5 * sizeof(char *));
 	ft_whichimage(mv, &ima);
 	ft_onemove(mv, l, c, (*map)->increm, (*map)->pacmouth, map, ima);
-	if ((*map)->increm == 0 || (*map)->increm == 8 || (*map)->increm == 16 || (*map)->increm == 24)
+	if ((*map)->increm == 0 || (*map)->increm == 8 || (*map)->increm == 16
+		|| (*map)->increm == 24)
 		(*map)->pacmouth++;
-	if ((*map)->pacmouth == 5i || (*map)->increm == 25)
+	if ((*map)->pacmouth == 5 || (*map)->increm == 25)
 		(*map)->pacmouth = 0;
 //	j += 1 - 5 * (j == 4);
 	free(ima);

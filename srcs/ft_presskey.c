@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/30 15:38:50 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/30 21:46:10 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_presskey(int keycode, void *m)
 {
 	t_map	*map;
+
 	map = (t_map *)m;
 	if (map->anim == 0)
 	{
