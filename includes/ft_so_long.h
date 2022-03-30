@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/29 22:00:14 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/30 08:05:55 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct s_square
 	int	dr;
 }	t_square;
 
+int		ft_changedoor(t_map *map);
 int		ft_checkmap(t_map **map);
 int		ft_closegame(t_map **map);
 void	ft_displaymap(t_map **map);
