@@ -6,12 +6,13 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 09:37:27 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/17 16:59:20 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:37:43 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
+// manage the additionnal message printed after Error\n
 int	ft_exitfail(int fd, int i)
 {
 	write(fd, "Error\n", 6);

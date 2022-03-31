@@ -5,7 +5,7 @@ SRCS_DIR		= ./srcs/
 FILES_COMMON	= ft_changedoor.c ft_checkmap.c ft_closegame.c \
 				ft_displaymap.c ft_exitfail.c \
 				ft_fourwall.c ft_game.c ft_initmap.c \
-				ft_isberfile.c \
+				ft_inputmap.c ft_inputspot.c ft_isberfile.c \
 				ft_ispathofmapvalid.c ft_freemap.c ft_onewall.c \
 				ft_pacmove.c \
 				ft_parsing.c \
@@ -86,6 +86,8 @@ test	:
 	@./so_long maps/nocollectible.ber
 	@echo "########### test with 0 exit on the map ############################"
 	@./so_long maps/noexit.ber
+	@echo "########### test with 2 exit on the map ############################"
+	@./so_long maps/twoexit.ber
 	@echo "########### test with 1 ghost on the map ###########################"
 	@./so_long maps/mapwithghost.ber
 	@echo "########### test 1 with incomplete walls around on the map #########"
