@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 16:51:53 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 23:21:38 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,11 @@ typedef struct s_square
 
 int		ft_changedoor(t_map *map);
 int		ft_checkmap(t_map **map);
-int		ft_closegame(t_map **map);
+int		ft_closegame(void **m);
 void	ft_displaymap(t_map **map);
 int		ft_exitfail(int fd, int i);
 char	*ft_fourwall(t_square sq);
+int		ft_freemap(t_map *map);
 int		ft_game(t_map *map);
 void	ft_initmap(t_map **map);
 int		ft_inputmap(char *arg1, t_map **map);

@@ -39,7 +39,8 @@ CC				= gcc
 
 CMINILIBX		= -L./mlx -lmlx -framework OpenGL -framework AppKit 
 
-CFLAGS			= -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS			= -Wall -Werror -Wextra 
+// -g -fsanitize=address
 
 all		: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 21:25:02 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/18 12:11:23 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 20:53:14 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ char	*ft_whichwall(int i, int j, t_map **map)
 {
 	t_square	sq;
 
-	if (i == 0 || i == (*map)->nbline - 1 || j == 0 || j == (*map)->nbcolumn - 2)
+	if (i == 0 || i == (*map)->nbline - 1 || j == 0 || j == (*map)->nbcolumn
+		- 2)
 		return (ft_frame(i, j, map));
 	sq = ft_getsquare(i, j, map);
 	if (sq.up + sq.le + sq.ri + sq.dw == 0)

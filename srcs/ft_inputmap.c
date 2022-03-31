@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:38:46 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 14:45:17 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 23:36:57 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ int	ft_inputmap(char *arg1, t_map **map)
 	if (!fd)
 		return (5);
 	inmaze = malloc ((*map)->nbline * sizeof(char *));
+	printf("inmaze=%p\n", inmaze);
 	i = 0;
 	while (i < (*map)->nbline)
 	{
 		line = get_next_line(fd);
 		inmaze[i] = malloc ((*map)->nbcolumn * sizeof (char *));
+		printf("inmaze[%i]=%p\n", i, inmaze[i]);
 		j = 0;
 		while (j < (*map)->nbcolumn - 1)
 		{
