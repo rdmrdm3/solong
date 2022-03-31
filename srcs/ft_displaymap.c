@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/30 21:44:00 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:54:21 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_whatimage(int i, int j, t_map **map)
 		return ("./image/doorclosed.xpm");
 	else if (c == 'P')
 	{
-		(*map)->maze[i][j] = 0;
+		(*map)->maze[i][j] = '0';
 		return ("./image/pacman.xpm");
 	}
 	else if (c == 'G')
