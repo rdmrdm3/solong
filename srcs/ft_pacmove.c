@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 16:23:33 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:22:31 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 	int			h;
 	void		*img;
 
-	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwaybck.xpm", &w, &h);
+	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwayblck.xpm", &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
 	mlx_destroy_image((*map)->mlx, img);
 	img = mlx_xpm_file_to_image((*map)->mlx, ima[j], &w, &h);
