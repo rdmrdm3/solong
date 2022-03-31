@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:28:19 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 14:54:21 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 16:06:06 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,14 @@ char	*ft_whatimage(int i, int j, t_map **map)
 void	ft_displaymap(t_map **map)
 {
 	void	*img;
-	int		w;
-	int		h;
 	int		img_width;
 	int		img_height;
 	int		i;
 	int		j;
 
-	w = ((*map)->nbcolumn - 1) * 25;
-	h = (*map)->nbline * 25;
 	(*map)->mlx = mlx_init();
-	(*map)->win = mlx_new_window((*map)->mlx, w, h, "Pacman @ 42");
+	(*map)->win = mlx_new_window((*map)->mlx, ((*map)->nbcolumn - 1) * 25,
+			(*map)->nbline * 25, "Pacman @ 42");
 	i = 0;
 	while (i < (*map)->nbline)
 	{

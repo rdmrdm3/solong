@@ -3,7 +3,7 @@
 // 2nd number is number of lines
 // 3rd number is the number of colors
 // 4th number is the number of caractere to define a color
-static char * walkwayblack_xpm[] = {
+static char * walkwaybck_xpm[] = {
 "25 25 2 1",
 ". 	c #000000",
 "+	c #FFA500",

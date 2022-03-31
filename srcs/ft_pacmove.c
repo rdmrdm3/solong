@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/30 22:14:56 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 16:23:33 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 	int			h;
 	void		*img;
 
-	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwayblack.xpm", &w, &h);
+	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwaybck.xpm", &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
 	mlx_destroy_image((*map)->mlx, img);
 	img = mlx_xpm_file_to_image((*map)->mlx, ima[j], &w, &h);
@@ -79,29 +79,6 @@ int	ft_pacmove(int mv, int l, int c, t_map **map)
 		(*map)->pacmouth++;
 	if ((*map)->pacmouth == 5 || (*map)->increm == 25)
 		(*map)->pacmouth = 0;
-//	j += 1 - 5 * (j == 4);
 	free(ima);
-	return (0);
-}
-
-int	ft_pacmoveold(int mv, int l, int c, t_map **map)
-{
-	int				i;
-	static int		j;
-	char			**ima;
-
-	j = 0;
-	i = 0;
-	printf("in pacmove\n");
-	ima = malloc(5 * sizeof(char *));
-	ft_whichimage(mv, &ima);
-	while (i <= 25)
-	{	
-		ft_onemove(mv, l, c, i, j, map, ima);
-		j += 1 - 5 * (j == 4);
-		i++;
-	}
-	(*map)->pspot[0][1] += (mv == 2) - (mv == 4);
-	(*map)->pspot[0][0] += (mv == 3) - (mv == 1);
 	return (0);
 }
