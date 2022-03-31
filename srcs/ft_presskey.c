@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 11:57:16 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 15:06:24 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ int	ft_presskey(int keycode, void *m)
 				map->maze[map->pspot[0][0] - 1][map->pspot[0][1]] = '0';
 				if (map->collectible == 0)
 					ft_changedoor(map);
+			}
+			else if (map->maze[map->pspot[0][0] - 1][map->pspot[0][1]] == 'E')
+			{
+				if (map->collectible == 0)
+					exit(1);
 			}
 		}
 		else if (keycode == 0 || keycode == 123)
@@ -88,6 +93,11 @@ int	ft_presskey(int keycode, void *m)
 				if (map->collectible == 0)
 					ft_changedoor(map);
 			}
+			else if (map->maze[map->pspot[0][0] + 1][map->pspot[0][1]] == 'E')
+			{
+				if (map->collectible == 0)
+					exit(1);
+			}
 		}
 		else if (keycode == 2 || keycode == 124)
 		{
@@ -108,7 +118,12 @@ int	ft_presskey(int keycode, void *m)
 				if (map->collectible == 0)
 					ft_changedoor(map);
 			}
-		}
+			else if (map->maze[map->pspot[0][0]][map->pspot[0][1] + 1] == 'E')
+			{
+				if (map->collectible == 0)
+					exit(1);
+			}
+	}
 	}
 	return (0);
 }
