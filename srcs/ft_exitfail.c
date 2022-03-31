@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 09:37:27 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 14:37:43 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:59:53 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_exitfail(int fd, int i)
 	else if (i == 8)
 		write (fd, "Put minimum 1 collectible on the map.\n", 38);
 	else if (i == 9)
-		write (fd, "Put minimum 1 exit on the map.\n", 31);
+		write (fd, "Put 1 exit on the map.\n", 23);
 	else if (i == 10)
 		write (fd, "No ghost are allowed on the map.\n", 33);
 	else if (i == 11)
