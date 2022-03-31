@@ -6,12 +6,13 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:06:29 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/28 17:35:56 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:08:25 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
+// initialize all the elements of the structure t_map to 0 or NULL
 void	ft_initmap(t_map **map)
 {
 	(*map)->wall = 0;
@@ -28,6 +29,8 @@ void	ft_initmap(t_map **map)
 	(*map)->nbcolumn = 0;
 	(*map)->maze = NULL;
 	(*map)->nbmove = 0;
+	(*map)->mlx = NULL;
+	(*map)->win = NULL;
 	(*map)->mv = 0;
 	(*map)->increm = 0;
 	(*map)->anim = 0;

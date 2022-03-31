@@ -6,12 +6,13 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:17:20 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/11 15:41:39 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:08:55 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
+// check if the map cam be open at the given path
 int	ft_ispathofmapvalid(char *arg1)
 {
 	int	fd;

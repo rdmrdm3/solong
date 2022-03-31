@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/30 21:46:10 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:57:16 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	ft_presskey(int keycode, void *m)
 				map->anim = 1;
 				map->nbmove++;
 				map->collectible--;
+				map->maze[map->pspot[0][0] - 1][map->pspot[0][1]] = '0';
 				if (map->collectible == 0)
 					ft_changedoor(map);
 			}
@@ -58,6 +59,7 @@ int	ft_presskey(int keycode, void *m)
 				map->anim = 1;
 				map->nbmove++;
 				map->collectible--;
+				map->maze[map->pspot[0][0]][map->pspot[0][1] - 1] = '0';
 				if (map->collectible == 0)
 					ft_changedoor(map);
 			}
@@ -82,6 +84,7 @@ int	ft_presskey(int keycode, void *m)
 				map->anim = 1;
 				map->nbmove++;
 				map->collectible--;
+				map->maze[map->pspot[0][0] + 1][map->pspot[0][1]] = '0';
 				if (map->collectible == 0)
 					ft_changedoor(map);
 			}
@@ -101,6 +104,7 @@ int	ft_presskey(int keycode, void *m)
 				map->anim = 1;
 				map->nbmove++;
 				map->collectible--;
+				map->maze[map->pspot[0][0]][map->pspot[0][1] + 1] = '0';
 				if (map->collectible == 0)
 					ft_changedoor(map);
 			}

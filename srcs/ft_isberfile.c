@@ -6,12 +6,13 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:46:58 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/11 15:02:50 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:08:39 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
+// check if the name of the file ends with .ber
 int	ft_isberfile(char *file)
 {
 	int	file_len;
