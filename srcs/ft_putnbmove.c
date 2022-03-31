@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:47:23 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 16:54:31 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:38:51 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_putnbmove(int n)
 	unsigned int	i;
 	char			c;
 
-	write(1, "Pacman moved ", 13);
 	if (n < 0)
 	{
 		write(1, "-", 1);
@@ -30,8 +29,4 @@ void	ft_putnbmove(int n)
 		ft_putnbmove((int)(i / 10));
 	c = i % 10 + '0';
 	write(1, &c, 1);
-	if (n <= 1)
-		write(1, " time.\n", 7);
-	else
-		write(1, " times.\n", 8);
 }
