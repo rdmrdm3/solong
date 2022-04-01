@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_so_long.c                                       :+:      :+:    :+:   */
+/*   ft_so_long_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 22:38:30 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 13:07:15 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/04/01 14:43:12 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/04/01 15:02:18 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(int argc, char **argv)
 	t_map	m;
 
 	map = &m;
-	parsingresult = ft_parsing(argc, argv, &map);
+	parsingresult = ft_parsing_bonus(argc, argv, &map);
 	if (parsingresult != 1)
-		return (ft_exitfail(1, parsingresult));
+		return (ft_exitfail_bonus(1, parsingresult));
 	ft_displaymap(&map);
 	mlx_hook(map->win, 17, 0L, ft_closegame, map);
 	mlx_key_hook(map->win, ft_presskey, map);

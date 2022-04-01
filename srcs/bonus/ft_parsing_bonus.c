@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_closegame.c                                     :+:      :+:    :+:   */
+/*   ft_parsing_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 10:30:58 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 13:06:42 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/04/01 14:36:12 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/04/01 14:44:02 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-//	mlx_destroy_window((*map)->mlx, (*map)->win);
-int	ft_closegame(void **m)
+// check if the parameters given to the program are valid
+int	ft_parsing_bonus(int argc, char **argv, t_map **map)
 {
-	t_map	**map;
+	int	i;
 
-	map = (t_map **)m;
-	exit (1);
-	return (0);
+	if (argc != 2)
+		return (2);
+	if (ft_ispathofmapvalid(argv[1]) != 1)
+		return (3);
+	if (ft_isberfile(argv[1]) != 1)
+		return (4);
+	ft_initmap(map);
+	i = ft_readmap(argv[1], map);
+	if (i != 1)
+		return (i);
+	i = ft_checkmap_bonus(map);
+	if (i != 1)
+		return (i);
+	return (1);
 }
