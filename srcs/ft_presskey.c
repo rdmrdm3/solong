@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 12:28:36 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/01 16:04:22 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,15 @@ int	ft_printmove(t_map *map)
 }
 
 // congrats, you won !
-void	ft_win(t_map *map)
+// too bad, you lost !
+void	ft_winorlose(t_map *map, int i)
 {
 	ft_printmove(map);
-	exit(1);
+	if (i == 1)
+		write(1, "Congratulations, you won !\n", 27);
+	else
+		write(1, "Too bag, you lost :(!\n", 22);
+	exit (1);
 }
 
 // a or b equal to -1 or +1 depending on the direction
@@ -55,8 +60,10 @@ int	ft_ifmove(t_map *map, int m, int a, int b)
 	else if (map->maze[map->pspot[0][0] + a][map->pspot[0][1] + b] == 'E')
 	{
 		if (map->collectible == 0)
-			ft_win(map);
+			ft_winorlose(map, 1);
 	}
+	else if (map->maze[map->pspot[0][0] + a][map->pspot[0][1] + b] == 'G')
+		ft_winorlose(map, 0);
 	return (0);
 }
 

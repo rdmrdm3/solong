@@ -1,23 +1,22 @@
 NAME			= so_long
 
+NAME_BONUS		= so_long_bonus
+
 SRCS_DIR		= ./srcs/
 
-FILES_COMMON	= ft_changedoor.c ft_checkmap.c ft_closegame.c \
-				ft_displaymap.c ft_exitfail.c \
-				ft_fourwall.c ft_game.c ft_initmap.c \
-				ft_inputmap.c ft_inputspot.c ft_isberfile.c \
-				ft_ispathofmapvalid.c ft_freemap.c ft_onewall.c \
-				ft_pacmove.c \
-				ft_parsing.c \
-				ft_presskey.c ft_printmap.c \
-				ft_printmaze.c ft_putnbmove.c \
-				ft_readmap.c ft_strlen.c ft_threewall.c ft_twowall.c \
-				ft_whichwall.c \
-				get_next_line.c
+FILES_COMMON	= ft_changedoor.c ft_closegame.c ft_displaymap.c ft_fourwall.c \
+				  ft_game.c ft_initmap.c ft_inputmap.c ft_inputspot.c \
+				  ft_isberfile.c ft_ispathofmapvalid.c ft_freemap.c \
+				  ft_onewall.c ft_pacmove.c ft_presskey.c ft_printmap.c \
+				  ft_printmaze.c ft_putnbmove.c ft_readmap.c ft_strlen.c \
+				  ft_threewall.c ft_twowall.c ft_whichwall.c \
+				  get_next_line.c
 
-FILES_PROG		= ft_so_long.c $(FILES_COMMON)
+FILES_PROG		= ft_checkmap.c ft_exitfail.c ft_parsing.c ft_so_long.c \
+				  $(FILES_COMMON)
 
-FILES_BONUS		=	$(FILES_COMMON)
+FILES_BONUS		= ft_checkmap_bonus.c ft_exitfail_bonus.c ft_parsing_bonus.c \
+				  ft_so_long_bonus.c $(FILES_COMMON)
 
 SRCS			= $(addprefix $(SRCS_DIR),$(FILES_PROG))
 
