@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:30:54 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/30 15:39:18 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:12:00 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_game(t_map *map)
 			map->pspot[0][0] += (map->mv == 3) - (map->mv == 1);
 			map->pspot[0][1] += (map->mv == 2) - (map->mv == 4);
 		}
-		ft_pacmove(map->mv, map->pspot[0][0], map->pspot[0][1], &map);
+		ft_pacmove(map->pspot[0][0], map->pspot[0][1], &map);
 	}
 	return (0);
 }

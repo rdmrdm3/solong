@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 17:22:31 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:26:51 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_l(int mv, int l)
 	return (l * 25 + 25 * (mv == 3) - 25 * (mv == 1));
 }
 
-int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
+int	ft_onemove(int l, int c, t_map **map, char **ima)
 {		
 	int			w;
 	int			h;
@@ -59,21 +59,23 @@ int	ft_onemove(int mv, int l, int c, int i, int j, t_map **map, char **ima)
 	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwayblck.xpm", &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
 	mlx_destroy_image((*map)->mlx, img);
-	img = mlx_xpm_file_to_image((*map)->mlx, ima[j], &w, &h);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win,
-		img, c * 25 + i * (mv == 2) - i * (mv == 4),
-		l * 25 - i * (mv == 1) + i * (mv == 3));
+	img = mlx_xpm_file_to_image((*map)->mlx, ima[(*map)->pacmouth], &w, &h);
+	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25
+		+ (*map)->increm * ((*map)->mv == 2)
+		- (*map)->increm * ((*map)->mv == 4), l * 25
+		- (*map)->increm * ((*map)->mv == 1)
+		+ (*map)->increm * ((*map)->mv == 3));
 	mlx_destroy_image((*map)->mlx, img);
 	return (0);
 }
 
-int	ft_pacmove(int mv, int l, int c, t_map **map)
+int	ft_pacmove(int l, int c, t_map **map)
 {
 	char			**ima;
 
 	ima = malloc(5 * sizeof(char *));
-	ft_whichimage(mv, &ima);
-	ft_onemove(mv, l, c, (*map)->increm, (*map)->pacmouth, map, ima);
+	ft_whichimage((*map)->mv, &ima);
+	ft_onemove(l, c, map, ima);
 	if ((*map)->increm == 0 || (*map)->increm == 8 || (*map)->increm == 16
 		|| (*map)->increm == 24)
 		(*map)->pacmouth++;

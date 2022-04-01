@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:38:46 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 23:36:57 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:56:44 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,34 +32,41 @@ int	ft_countwall(char c, t_map **map)
 	return (1);
 }
 
+// 
+char	**ft_inputmapcore(char **inmaze, t_map **map, char *line, int i)
+{
+	int		j;
+
+	j = 0;
+	while (j < (*map)->nbcolumn - 1)
+	{
+		inmaze[i][j] = line[j];
+		ft_countwall(inmaze[i][j], map);
+		j++;
+	}
+	inmaze[i][j] = '\0';
+	return (inmaze);
+}
+
 // create the map in the char **
 int	ft_inputmap(char *arg1, t_map **map)
 {
 	char	*line;
 	char	**inmaze;
 	int		i;
-	int		j;
 	int		fd;
 
 	fd = open(arg1, O_RDONLY);
 	if (!fd)
 		return (5);
 	inmaze = malloc ((*map)->nbline * sizeof(char *));
-	printf("inmaze=%p\n", inmaze);
 	i = 0;
 	while (i < (*map)->nbline)
 	{
 		line = get_next_line(fd);
 		inmaze[i] = malloc ((*map)->nbcolumn * sizeof (char *));
-		printf("inmaze[%i]=%p\n", i, inmaze[i]);
-		j = 0;
-		while (j < (*map)->nbcolumn - 1)
-		{
-			inmaze[i][j] = line[j];
-			ft_countwall(inmaze[i][j], map);
-			j++;
-		}
-		inmaze[i][j] = '\0';
+		inmaze = ft_inputmapcore(inmaze, map, line, i);
+		free(line);
 		i++;
 	}
 	(*map)->maze = inmaze;
