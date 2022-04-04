@@ -18,7 +18,7 @@ FILES_PROG		= ft_checkmap.c ft_exitfail.c ft_game.c \
 				$(FILES_COMMON)
 
 FILES_BONUS		= ft_checkmap_bonus.c ft_exitfail_bonus.c ft_game_bonus.c \
-				ft_ghostmove.c ft_itoa.c \
+				ft_ghostmove.c ft_ghostnextmove.c ft_itoa.c \
 				ft_parsing_bonus.c \
 				ft_presskey_bonus.c ft_so_long_bonus.c $(FILES_COMMON)
 

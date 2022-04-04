@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:03:06 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/02 23:24:22 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 22:46:14 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int	ft_presskey_bonus(int keycode, void *m)
 	map = (t_map *)m;
 	if (map->anim == 0)
 	{
+		ft_ghostnextmove(map);
 		if (keycode == 53)
 			exit(1);
 		else if (keycode == 13 || keycode == 126)
