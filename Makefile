@@ -12,12 +12,12 @@ FILES_COMMON	= ft_changedoor.c ft_closegame.c ft_displaymap.c ft_fourwall.c \
 				  ft_threewall.c ft_twowall.c ft_whichwall.c \
 				  get_next_line.c
 
-FILES_PROG		= ft_checkmap.c ft_exitfail.c ft_game.c ft_parsing.c \
-				ft_presskey.c ft_so_long.c \
+FILES_PROG		= ft_checkmap.c ft_exitfail.c ft_game.c ft_ghostfirstmove.c \
+				ft_parsing.c ft_presskey.c ft_so_long.c \
 				$(FILES_COMMON)
 
 FILES_BONUS		= ft_checkmap_bonus.c ft_exitfail_bonus.c ft_game_bonus.c \
-				ft_itoa.c \
+				ft_ghostmove.c ft_itoa.c \
 				ft_parsing_bonus.c \
 				ft_presskey_bonus.c ft_so_long_bonus.c $(FILES_COMMON)
 
@@ -107,7 +107,8 @@ test	:
 	@./so_long maps/mapcorner6.ber
 
 clean	:
-	rm -f $(OBJS)
+	rm -f $(OBJS_PROG)
+	rm -f $(OBJS_BONUS)
 
 fclean	: clean
 	rm -f $(NAME)

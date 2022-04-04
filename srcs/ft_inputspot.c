@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:45:50 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/02 23:11:02 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 17:07:02 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ int	ft_inputspot(t_map **map)
 	while (i < (*map)->collectible)
 		(*map)->cspot[i++] = malloc (2 * sizeof(int *));
 	ft_inputspotval(map);
+	ft_ghostfirstmove(*map);
 	return (0);
 }

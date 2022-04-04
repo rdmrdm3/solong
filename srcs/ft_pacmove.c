@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 11:30:26 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:21:02 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,12 @@ int	ft_onemove(t_map **map, char **ima)
 	void		*img;
 
 	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwayblck.xpm", &w, &h);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, (*map)->pspot[0][1] * 25, (*map)->pspot[0][0] * 25 - 0);
+	mlx_put_image_to_window((*map)->mlx, (*map)->win, img,
+		(*map)->pspot[0][1] * 25, (*map)->pspot[0][0] * 25);
 	mlx_destroy_image((*map)->mlx, img);
 	img = mlx_xpm_file_to_image((*map)->mlx, ima[(*map)->pacmouth], &w, &h);
-	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, (*map)->pspot[0][1] * 25
-		+ (*map)->increm * ((*map)->mv == 2)
+	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, (*map)->pspot[0][1]
+		* 25 + (*map)->increm * ((*map)->mv == 2)
 		- (*map)->increm * ((*map)->mv == 4), (*map)->pspot[0][0] * 25
 		- (*map)->increm * ((*map)->mv == 1)
 		+ (*map)->increm * ((*map)->mv == 3));

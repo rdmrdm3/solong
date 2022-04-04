@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:06:29 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 12:08:25 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:33:05 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ void	ft_initmap(t_map **map)
 	(*map)->increm = 0;
 	(*map)->anim = 0;
 	(*map)->pacmouth = 0;
+	(*map)->ghostmouth = 0;
 }

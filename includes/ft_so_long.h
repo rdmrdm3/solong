@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 11:30:17 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 17:16:23 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ typedef struct s_map
 	int		mv;
 	int		increm;
 	int		anim;
-	int		pacmouth;	
+	int		pacmouth;
+	int		ghostmouth;
 }			t_map;
 
 typedef struct s_square
@@ -70,37 +71,40 @@ typedef struct s_square
 	int	dr;
 }	t_square;
 
-int		ft_changedoor(t_map *map);
-int		ft_checkmap(t_map **map);
-int		ft_closegame(void **m);
-void	ft_displaymap(t_map **map);
-int		ft_exitfail(int fd, int i);
-char	*ft_fourwall(t_square sq);
-int		ft_freemap(t_map *map);
-int		ft_game(t_map *map);
-void	ft_initmap(t_map **map);
-int		ft_inputmap(char *arg1, t_map **map);
-int		ft_inputspot(t_map **map);
-int		ft_isberfile(char *file);
-int		ft_ispathofmapvalid(char *arg1);
-char	*ft_onewall(t_square sq);
-int		ft_pacup(t_map **map);
-int		ft_pacmove(t_map **map);
-int		ft_parsing(int argc, char **argv, t_map **map);
-void	ft_printmap(t_map **map);
-int		ft_presskey(int keycode, void *map);
-void	ft_putnbmove(int n);
-int		ft_readmap(char *arg1, t_map **map);
-int		ft_strlen(const char *s);
-char	*ft_threewall(t_square sq);
-char	*ft_twowall(t_square sq);
-char	*ft_whichwall(int i, int j, t_map **map);
-char	*get_next_line(int fd);
+int			ft_changedoor(t_map *map);
+int			ft_checkmap(t_map **map);
+int			ft_closegame(void **m);
+void		ft_displaymap(t_map **map);
+int			ft_exitfail(int fd, int i);
+char		*ft_fourwall(t_square sq);
+int			ft_freemap(t_map *map);
+int			ft_game(t_map *map);
+t_square	ft_getsquare(int i, int j, t_map **map);
+void		ft_initmap(t_map **map);
+int			ft_inputmap(char *arg1, t_map **map);
+int			ft_inputspot(t_map **map);
+int			ft_isberfile(char *file);
+int			ft_ispathofmapvalid(char *arg1);
+char		*ft_onewall(t_square sq);
+int			ft_pacup(t_map **map);
+int			ft_pacmove(t_map **map);
+int			ft_parsing(int argc, char **argv, t_map **map);
+void		ft_printmap(t_map **map);
+int			ft_presskey(int keycode, void *map);
+void		ft_putnbmove(int n);
+int			ft_readmap(char *arg1, t_map **map);
+int			ft_strlen(const char *s);
+char		*ft_threewall(t_square sq);
+char		*ft_twowall(t_square sq);
+char		*ft_whichwall(int i, int j, t_map **map);
+char		*get_next_line(int fd);
 
 // bonus
 int		ft_checkmap_bonus(t_map **map);
 int		ft_exitfail_bonus(int fd, int i);
 int		ft_game_bonus(t_map *map);
+int		ft_ghostfirstmove(t_map *map);
+int		ft_ghostmove(t_map **map);
 char	*ft_itoa(int n);
 int		ft_parsing_bonus(int argc, char **argv, t_map **map);
 int		ft_presskey_bonus(int keycode, void *map);
