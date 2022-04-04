@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 22:15:49 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/02 20:58:50 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 11:16:24 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,14 @@ int	ft_l(int mv, int l)
 	return (l * 25 + 25 * (mv == 3) - 25 * (mv == 1));
 }
 
-int	ft_onemove(int l, int c, t_map **map, char **ima)
+int	ft_onemove(int i, int l, int c, t_map **map, char **ima)
 {		
 	int			w;
 	int			h;
 	void		*img;
 
+	i++;
+	i--;
 	img = mlx_xpm_file_to_image((*map)->mlx, "./image/walkwayblck.xpm", &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, c * 25, l * 25 - 0);
 	mlx_destroy_image((*map)->mlx, img);
@@ -67,14 +69,20 @@ int	ft_onemove(int l, int c, t_map **map, char **ima)
 int	ft_ghostmove(int l, int c, t_map **map)
 {
 	char	**imghost;
+	int	i;
 
-	imghost = malloc(3 * sizeof(char *));
-	ft_whichghost((*map)->mv, &imghost);
-	ft_onemove(l, c, map, imghost);
-	if ((*map)->increm == 0 || (*map)->increm == 24)
-		(*map)->pacmouth++;
-	if ((*map)->pacmouth == 2 || (*map)->increm == 25)
-		(*map)->pacmouth = 0;
+	i = 0;
+	while (i < ghost)
+	{
+		imghost = malloc(3 * sizeof(char *));
+		ft_whichghost((*map)->ghost[i][2], &imghost);
+		ft_onemove(i, l, c, map, imghost);
+		if ((*map)->increm == 0 || (*map)->increm == 24)
+			(*map)->pacmouth++;
+		if ((*map)->pacmouth == 2 || (*map)->increm == 25)
+			(*map)->pacmouth = 0;
+		i++;
+	}
 	free(imghost);
 	return (0);
 }
