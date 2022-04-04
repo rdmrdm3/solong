@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:45:50 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 14:46:41 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/02 23:11:02 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,57 +64,6 @@ int	ft_inputspotval(t_map **map)
 	}
 	return (1);
 }
-
-/*
-// 
-int	ft_inputspotval(t_map **map)
-{
-	int	i;
-	int	j;
-	int	ne;
-	int	nc;
-	int	ng;
-
-	ne = 0;
-	nc = 0;
-	ng = 0;
-	i = 0;
-	while (i < (*map)->nbline)
-	{
-		j = 0;
-		while (j < (*map)->nbcolumn - 1)
-		{
-			if ((*map)->maze[i][j] == 'P')
-			{
-				(*map)->pspot[0][0] = i;
-				(*map)->pspot[0][1] = j;
-			}
-			if ((*map)->maze[i][j] == 'C')
-			{
-				(*map)->cspot[nc][0] = i;
-				(*map)->cspot[nc][1] = j;
-				nc++;
-			}
-			if ((*map)->maze[i][j] == 'E')
-			{
-				(*map)->espot[ne][0] = i;
-				(*map)->espot[ne][1] = j;
-				ne++;
-			}
-			if ((*map)->maze[i][j] == 'G')
-			{
-				(*map)->gspot[ng][0] = i;
-				(*map)->gspot[ng][1] = j;
-				(*map)->gspot[ng][2] = 0;
-				ng++;
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-*/
 
 // create the structure that contains the coordinates of the player, exit ...
 int	ft_inputspot(t_map **map)

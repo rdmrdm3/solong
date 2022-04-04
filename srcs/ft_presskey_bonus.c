@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_presskey.c                                      :+:      :+:    :+:   */
+/*   ft_presskey_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 20:59:46 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/04/02 21:03:06 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/04/02 23:24:22 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
 // print the number of move in the shell
-int	ft_printmove(t_map *map)
+int	ft_printmove_bonus(t_map *map)
 {
+	char	*txt;
+
 	map->nbmove++;
-	write(1, "Pacman moved ", 13);
-	ft_putnbmove(map->nbmove);
-	if (map->nbmove <= 1)
-		write(1, " time.\n", 7);
-	else
-		write(1, " times.\n", 8);
+	txt = ft_itoa(map->nbmove);
+	mlx_string_put(map->mlx, map->win, 0, 0, 0xaaaaaa, txt);
+	free(txt);
 	return (0);
 }
 
 // congrats, you won !
 // too bad, you lost !
-void	ft_winorlose(t_map *map, int i)
+void	ft_winorlose_bonus(t_map *map, int i)
 {
-	ft_printmove(map);
+	ft_printmove_bonus(map);
 	if (i == 1)
 		write(1, "Congratulations, you won !\n", 27);
 	else
@@ -39,19 +38,19 @@ void	ft_winorlose(t_map *map, int i)
 
 // a or b equal to -1 or +1 depending on the direction
 // up a=-1, down a=1, right b=1, left b=-1
-int	ft_ifmove(t_map *map, int m, int a, int b)
+int	ft_ifmove_bonus(t_map *map, int m, int a, int b)
 {
 	if (map->maze[map->pspot[0][0] + a][map->pspot[0][1] + b] == '0')
 	{
 		map->mv = m;
 		map->anim = 1;
-		ft_printmove(map);
+		ft_printmove_bonus(map);
 	}
 	else if (map->maze[map->pspot[0][0] + a][map->pspot[0][1] + b] == 'C')
 	{
 		map->mv = m;
 		map->anim = 1;
-		ft_printmove(map);
+		ft_printmove_bonus(map);
 		map->collectible--;
 		map->maze[map->pspot[0][0] + a][map->pspot[0][1] + b] = '0';
 		if (map->collectible == 0)
@@ -60,10 +59,10 @@ int	ft_ifmove(t_map *map, int m, int a, int b)
 	else if (map->maze[map->pspot[0][0] + a][map->pspot[0][1] + b] == 'E')
 	{
 		if (map->collectible == 0)
-			ft_winorlose(map, 1);
+			ft_winorlose_bonus(map, 1);
 	}
 	else if (map->maze[map->pspot[0][0] + a][map->pspot[0][1] + b] == 'G')
-		ft_winorlose(map, 0);
+		ft_winorlose_bonus(map, 0);
 	return (0);
 }
 
@@ -72,7 +71,7 @@ int	ft_ifmove(t_map *map, int m, int a, int b)
 // keycode=0  => a or left
 // keycode=1  => s or down
 // keycode=2  => d or right
-int	ft_presskey(int keycode, void *m)
+int	ft_presskey_bonus(int keycode, void *m)
 {
 	t_map	*map;
 
@@ -82,13 +81,13 @@ int	ft_presskey(int keycode, void *m)
 		if (keycode == 53)
 			exit(1);
 		else if (keycode == 13 || keycode == 126)
-			ft_ifmove(map, 1, -1, 0);
+			ft_ifmove_bonus(map, 1, -1, 0);
 		else if (keycode == 0 || keycode == 123)
-			ft_ifmove(map, 4, 0, -1);
+			ft_ifmove_bonus(map, 4, 0, -1);
 		else if (keycode == 1 || keycode == 125)
-			ft_ifmove(map, 3, 1, 0);
+			ft_ifmove_bonus(map, 3, 1, 0);
 		else if (keycode == 2 || keycode == 124)
-			ft_ifmove(map, 2, 0, 1);
+			ft_ifmove_bonus(map, 2, 0, 1);
 	}
 	return (0);
 }

@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pacmove.c                                       :+:      :+:    :+:   */
+/*   ft_ghostmove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 13:41:40 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/02 23:40:28 by rdi-marz         ###   ########.fr       */
+/*   Created: 2022/04/01 22:15:49 by rdi-marz          #+#    #+#             */
+/*   Updated: 2022/04/02 20:58:50 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
-int	ft_whichimage(int mv, char ***ima)
+int	ft_whichghost(int mv, char ***ima)
 {
-	(*ima)[0] = "./image/pacman.xpm";
+	(*ima)[0] = "./image/ghost.xpm";
 	if (mv == 1)
 	{
-		(*ima)[1] = "./image/pacman_up1.xpm";
-		(*ima)[2] = "./image/pacman_up2.xpm";
+		(*ima)[1] = "./image/ghost_up.xpm";
 	}
 	if (mv == 2)
 	{
-		(*ima)[1] = "./image/pacman_right1.xpm";
-		(*ima)[2] = "./image/pacman_right2.xpm";
+		(*ima)[1] = "./image/ghost_right.xpm";
 	}
 	if (mv == 3)
 	{		
-		(*ima)[1] = "./image/pacman_down1.xpm";
-		(*ima)[2] = "./image/pacman_down2.xpm";
+		(*ima)[1] = "./image/ghost_down.xpm";
 	}
 	if (mv == 4)
 	{		
-		(*ima)[1] = "./image/pacman_left1.xpm";
-		(*ima)[2] = "./image/pacman_left2.xpm";
+		(*ima)[1] = "./image/ghost_left.xpm";
 	}
-		(*ima)[3] = (*ima)[1];
-		(*ima)[4] = (*ima)[0];
+		(*ima)[2] = (*ima)[0];
 	return (0);
 }
 
@@ -69,18 +64,17 @@ int	ft_onemove(int l, int c, t_map **map, char **ima)
 	return (0);
 }
 
-int	ft_pacmove(int l, int c, t_map **map)
+int	ft_ghostmove(int l, int c, t_map **map)
 {
-	char	**ima;
+	char	**imghost;
 
-	ima = malloc(5 * sizeof(char *));
-	ft_whichimage((*map)->mv, &ima);
-	ft_onemove(l, c, map, ima);
-	if ((*map)->increm == 0 || (*map)->increm == 8 || (*map)->increm == 16
-		|| (*map)->increm == 24)
+	imghost = malloc(3 * sizeof(char *));
+	ft_whichghost((*map)->mv, &imghost);
+	ft_onemove(l, c, map, imghost);
+	if ((*map)->increm == 0 || (*map)->increm == 24)
 		(*map)->pacmouth++;
-	if ((*map)->pacmouth == 5 || (*map)->increm == 25)
+	if ((*map)->pacmouth == 2 || (*map)->increm == 25)
 		(*map)->pacmouth = 0;
-	free(ima);
+	free(imghost);
 	return (0);
 }
