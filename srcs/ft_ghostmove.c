@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 22:15:49 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 12:41:10 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 21:01:43 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ int	ft_onegmove(int i, t_map **map, char **ima)
 	mlx_destroy_image((*map)->mlx, img);
 	img = mlx_xpm_file_to_image((*map)->mlx, ima[(*map)->ghostmouth], &w, &h);
 	mlx_put_image_to_window((*map)->mlx, (*map)->win, img, (*map)->gspot[i][1]
-		* 25 + (*map)->increm * ((*map)->mv == 2)
-		- (*map)->increm * ((*map)->mv == 4), (*map)->gspot[i][0] * 25
-		- (*map)->increm * ((*map)->mv == 1)
-		+ (*map)->increm * ((*map)->mv == 3));
+		* 25 + (*map)->increm * ((*map)->gspot[i][2] == 2)
+		- (*map)->increm * ((*map)->gspot[i][2] == 4), (*map)->gspot[i][0] * 25
+		- (*map)->increm * ((*map)->gspot[i][2] == 1)
+		+ (*map)->increm * ((*map)->gspot[i][2] == 3));
 	mlx_destroy_image((*map)->mlx, img);
 	return (0);
 }
