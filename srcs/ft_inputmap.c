@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:38:46 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 12:56:44 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/04 17:43:49 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	ft_countwall(char c, t_map **map)
 	else if (c == 'P')
 		(*map)->player++;
 	else if (c == 'G')
+	{
 		(*map)->ghost++;
+		printf("found ghost %i\n", (*map)->ghost - 1);
+	}
 	else
 		return (-1);
 	return (1);
