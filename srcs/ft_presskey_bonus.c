@@ -6,22 +6,22 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:03:06 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/05 12:25:45 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/05 12:55:24 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_so_long.h"
 
 // print the number of move in the shell
-int	ft_printmove_bonus(t_map *map)
+void	ft_printmove_bonus(t_map *map)
 {
 	char	*txt;
 
 	map->nbmove++;
 	txt = ft_itoa(map->nbmove);
-	mlx_string_put(map->mlx, map->win, 1, 1, 0xaaaaaa, txt);
+	mlx_string_put(map->mlx, map->win, 0, 10, 0xFFFFFFFF, "Number of move :");
+	mlx_string_put(map->mlx, map->win, 115, 10, 0x00FFFFFF, txt);
 	free(txt);
-	return (0);
 }
 
 // congrats, you won !
