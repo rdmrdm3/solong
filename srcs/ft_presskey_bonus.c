@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:03:06 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 22:46:14 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/05 12:25:45 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_printmove_bonus(t_map *map)
 
 	map->nbmove++;
 	txt = ft_itoa(map->nbmove);
-	mlx_string_put(map->mlx, map->win, 0, 0, 0xaaaaaa, txt);
+	mlx_string_put(map->mlx, map->win, 1, 1, 0xaaaaaa, txt);
 	free(txt);
 	return (0);
 }

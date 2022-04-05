@@ -8,8 +8,8 @@ FILES_COMMON	= ft_changedoor.c ft_closegame.c ft_displaymap.c ft_fourwall.c \
 				  ft_initmap.c ft_inputmap.c ft_inputspot.c \
 				  ft_isberfile.c ft_ispathofmapvalid.c ft_freemap.c \
 				  ft_ghostfirstmove.c \
-				  ft_onewall.c ft_pacmove.c ft_printmap.c \
-				  ft_printmaze.c ft_putnbmove.c ft_readmap.c ft_strlen.c \
+				  ft_onewall.c ft_pacmove.c \
+				  ft_putnbmove.c ft_readmap.c ft_strlen.c \
 				  ft_threewall.c ft_twowall.c ft_whichwall.c \
 				  get_next_line.c
 

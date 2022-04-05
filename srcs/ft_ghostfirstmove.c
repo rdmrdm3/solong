@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:22:06 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 22:56:10 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/05 12:28:35 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_ghostfirstmove(t_map	*map)
 	while (i < map->ghost - 1)
 	{
 		i++;
-		printf("ghost %i found\n", i);
 		sq = ft_getsquare(map->gspot[i][0], map->gspot[i][1], &map);
 		map->gspot[i][2] = 1;
 		if (sq.up == 0)
