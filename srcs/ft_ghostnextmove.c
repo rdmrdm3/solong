@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 22:16:53 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/05 15:04:20 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:39:21 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int	ft_ghostnextmove(t_map	*map)
 		map->gspot[i][2] = 1;
 		if (sq.up == 0)
 			continue ;
+		map->gspot[i][2] = 4;
+		if (sq.le == 0)
+			continue ;
 		map->gspot[i][2] = 2;
 		if (sq.ri == 0)
 			continue ;
 		map->gspot[i][2] = 3;
 		if (sq.dw == 0)
-			continue ;
-		map->gspot[i][2] = 4;
-		if (sq.le == 0)
 			continue ;
 		map->gspot[i][2] = 0;
 	}

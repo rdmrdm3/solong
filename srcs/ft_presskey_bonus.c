@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 21:03:06 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/05 12:55:24 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:27:58 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,19 @@
 void	ft_printmove_bonus(t_map *map)
 {
 	char	*txt;
+	int		i;
+	void	*img;
+	int		w;
+	int		h;
 
+	i = 0;
+	img = mlx_xpm_file_to_image(map->mlx, "./image/blackboard.xpm", &w, &h);
+	while (i < map->nbcolumn - 1)
+	{
+		mlx_put_image_to_window(map->mlx, map->win, img, i * 25, 0);
+		i++;
+	}
+	mlx_destroy_image(map->mlx, img);
 	map->nbmove++;
 	txt = ft_itoa(map->nbmove);
 	mlx_string_put(map->mlx, map->win, 0, 10, 0xFFFFFFFF, "Number of move :");
