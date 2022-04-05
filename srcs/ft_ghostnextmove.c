@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 22:16:53 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 22:55:47 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:04:20 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_ghostnextmove(t_map	*map)
 	while (i < map->ghost - 1)
 	{
 		i++;
-		sq = ft_getsquare(map->gspot[i][0], map->gspot[i][1], &map);
+		sq = ft_getsquareghost(map->gspot[i][0], map->gspot[i][1], &map);
 		if (ft_ghostcancontinue(i, sq, map) == 1)
 			continue ;
 		map->gspot[i][2] = 1;

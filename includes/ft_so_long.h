@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 22:48:03 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:07:04 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,17 +100,15 @@ char		*ft_whichwall(int i, int j, t_map **map);
 char		*get_next_line(int fd);
 
 // bonus
-int		ft_checkmap_bonus(t_map **map);
-int		ft_exitfail_bonus(int fd, int i);
-int		ft_game_bonus(t_map *map);
-int		ft_ghostfirstmove(t_map *map);
-int		ft_ghostmove(t_map **map);
-int		ft_ghostnextmove(t_map	*map);
-char	*ft_itoa(int n);
-int		ft_parsing_bonus(int argc, char **argv, t_map **map);
-int		ft_presskey_bonus(int keycode, void *map);
-
-// to be removed
-int	ft_printmaze(t_map **map);
+int			ft_checkmap_bonus(t_map **map);
+int			ft_exitfail_bonus(int fd, int i);
+int			ft_game_bonus(t_map *map);
+t_square	ft_getsquareghost(int i, int j, t_map **map);
+int			ft_ghostfirstmove(t_map *map);
+int			ft_ghostmove(t_map **map);
+int			ft_ghostnextmove(t_map	*map);
+char		*ft_itoa(int n);
+int			ft_parsing_bonus(int argc, char **argv, t_map **map);
+int			ft_presskey_bonus(int keycode, void *map);
 
 #endif
