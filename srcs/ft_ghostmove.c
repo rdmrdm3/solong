@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 22:15:49 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/04 21:01:43 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 13:41:01 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,6 @@ int	ft_whichghost(int mv, char ***ima)
 		(*ima)[2] = (*ima)[0];
 	return (0);
 }
-
-/*
-int	ft_c(int mv, int c)
-{
-	return (c * 25 + 25 * (mv == 2) - 25 * (mv == 4));
-}
-
-int	ft_l(int mv, int l)
-{
-	return (l * 25 + 25 * (mv == 3) - 25 * (mv == 1));
-}
-*/
 
 int	ft_onegmove(int i, t_map **map, char **ima)
 {		
@@ -82,8 +70,8 @@ int	ft_ghostmove(t_map **map)
 			(*map)->ghostmouth++;
 		if ((*map)->ghostmouth == 2 || (*map)->increm == 25)
 			(*map)->ghostmouth = 0;
+		free(imghost);
 		i++;
 	}
-	free(imghost);
 	return (0);
 }
