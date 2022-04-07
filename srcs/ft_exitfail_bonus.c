@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:47:10 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 14:47:13 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:18:00 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ int	ft_exitfail_bonus(int fd, int i)
 		write (fd, "Put minimum 1 ghost on the map.\n", 32);
 	else if (i == 11)
 		write (fd, "There should be walls all around the map.\n", 42);
-	while (1)
-		;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 09:37:27 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/03/31 23:28:19 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:17:44 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ int	ft_exitfail(int fd, int i)
 		write (fd, "No ghost are allowed on the map.\n", 33);
 	else if (i == 11)
 		write (fd, "There should be walls all around the map.\n", 42);
-	while (1)
-		;
 	return (0);
 }
