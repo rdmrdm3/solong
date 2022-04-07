@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:38:30 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 13:07:15 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:32:13 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	main(int argc, char **argv)
 	mlx_key_hook(map->win, ft_presskey, map);
 	mlx_loop_hook(map->mlx, ft_game, map);
 	mlx_loop(map->mlx);
-	return (0);
+	return (1);
 }

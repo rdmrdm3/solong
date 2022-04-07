@@ -107,6 +107,9 @@ test	:
 	@./so_long maps/mapcorner5.ber
 	@echo "########### test 6 with incomplete walls around on the map #########"
 	@./so_long maps/mapcorner6.ber
+	@echo "########### test with a map containing wrong letters ###############"
+	@./so_long maps/badmap.ber
+
 
 clean	:
 	rm -f $(OBJS_PROG)

@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:36:12 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 14:44:02 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:15:06 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ int	ft_parsing_bonus(int argc, char **argv, t_map **map)
 	i = ft_checkmap_bonus(map);
 	if (i != 1)
 		return (i);
+	if ((*map)->errchar != 0)
+		return (12);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 15:53:14 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/01 20:59:46 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 14:37:08 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_winorlose(t_map *map, int i)
 		write(1, "Congratulations, you won !\n", 27);
 	else
 		write(1, "Too bad, you lost :(!\n", 22);
-	exit (1);
+	exit (0);
 }
 
 // a or b equal to -1 or +1 depending on the direction
@@ -80,7 +80,7 @@ int	ft_presskey(int keycode, void *m)
 	if (map->anim == 0)
 	{
 		if (keycode == 53)
-			exit(1);
+			exit(0);
 		else if (keycode == 13 || keycode == 126)
 			ft_ifmove(map, 1, -1, 0);
 		else if (keycode == 0 || keycode == 123)

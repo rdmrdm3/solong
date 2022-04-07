@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 22:00:25 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/05 15:07:04 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:03:53 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_map
 	int		**espot;
 	int		ghost;
 	int		**gspot;
+	int		errchar;
 	int		nbline;
 	int		nbcolumn;
 	char	**maze;

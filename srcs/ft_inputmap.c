@@ -6,7 +6,7 @@
 /*   By: rdi-marz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:38:46 by rdi-marz          #+#    #+#             */
-/*   Updated: 2022/04/05 12:29:08 by rdi-marz         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:11:48 by rdi-marz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_countwall(char c, t_map **map)
 	else if (c == 'G')
 		(*map)->ghost++;
 	else
-		return (-1);
+		(*map)->errchar = 1;
 	return (1);
 }
 
