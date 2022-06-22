@@ -17,6 +17,7 @@ int	ft_parsing(int argc, char **argv, t_map **map)
 {
 	int	i;
 
+
 	if (argc != 2)
 		return (2);
 	if (ft_ispathofmapvalid(argv[1]) != 1)
