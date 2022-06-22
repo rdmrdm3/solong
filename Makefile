@@ -41,10 +41,11 @@ INCLUDES_DIR	= ./includes/
 
 CC				= gcc
 
-CMINILIBX		= -L./mlx -lmlx -framework OpenGL -framework AppKit 
-
-CFLAGS			= -Wall -Werror -Wextra 
-// -g -fsanitize=address
+CMINILIBX		= -lmlx -lXext -lX11 -lm
+#mac
+#CMINILIBX		= -L./mlx -lmlx -framework OpenGL -framework AppKit
+CFLAGS			= -Wall -Werror -Wextra
+# -g -fsanitize=address
 
 all		: $(NAME)
 

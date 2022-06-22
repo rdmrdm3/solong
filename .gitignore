@@ -1,2 +1,5 @@
 unused
 cas
+*.o
+so_long
+.vscode

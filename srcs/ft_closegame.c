@@ -15,9 +15,7 @@
 //	mlx_destroy_window((*map)->mlx, (*map)->win);
 int	ft_closegame(void **m)
 {
-	t_map	**map;
-
-	map = (t_map **)m;
+	(void)m;
 	exit (0);
 	return (0);
 }
